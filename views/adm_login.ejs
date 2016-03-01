@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>the fanc shop</title>
+	<meta name=keywords content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css-reset.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/adm_login.css">
+ </head>
+  <body >
+	<div class="container">
+		<div class="alog_header"><img src="/images/1446165686_962636.png"></div>
+		<div class="alog_form" > 
+			<div class="form_wrap">
+				<form method="post">
+					<span>欢迎登录fancy后台~</span>
+					<div class="admname"> <label for="admname"><i  class="icon-user icon-large"></i></label><input id="admname" type="text" placeholder='请输入管理账户' name="admname" require> </div>
+					<div class="password"><label for="password"><i class=" icon-lock icon-large"></i> </label><input id="password" type="password" placeholder='请输入密码' name="password" require> </div>
+					<div class="check"><input id="check" type="text" name="check" placeholder='验证码'><img src="/images/Captcha.gif"> </div>
+					<button class="login">进入管理</button>
+					<input class="reset" type="button" value="重置" require></input>
+				</form>
+				
+			</div>
+		</div>
+		<div class="alog_footer">
+			⊙版权及最终解释权归fancy公司所有
+		</div>
+	</div>
+  </body>
+  </html>
+  <script type="text/javascript">
+  window.onload=function(){
+  		var  admname=document.getElementById('admname');
+  		var password=document.getElementById('password');
+  		var  reset=document.getElementsByClassName('reset')[0];
+  		var  login=document.getElementsByClassName('login')[0];
+  		var check=document.getElementById('check');
+  		login.onclick=function(){
+  			if (admname.value==''||password.value=='') {
+  				alert('用户名不能为空');
+  				return false;
+  			};
+  		 	if ( check.value!='olh4') {
+  		 		alert('验证码错误');
+  		 		return false
+  		 	};
+  		}
+	  	reset.onclick=function(){
+	  		admname.value='';
+  			password.value='';
+	  	}
+  		 
+  }
+  </script>
+

@@ -1,0 +1,74 @@
+@mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }   
+  @mixin boxShadow($shadow){
+ 	-webkit-box-shadow:$shadow; /*0 0 8px rgba(82, 168, 236, 0.6);*/
+	-moz-box-shadow: $shadow; 
+	box-shadow: $shadow; 
+ }
+  @mixin _transation($all){
+ 	transition:$all;
+	-moz-transition: $all; /* Firefox 4 */
+	-webkit-transition: $all; /* Safari 和 Chrome */
+	-o-transition: $all; /* Opera */
+ }
+  @mixin _opacity($all){
+ 	filter:alpha(opacity=$all*100);       /* IE */
+ 	-moz-opacity:$all;              /* 老版Mozilla */
+	-khtml-opacity:$all;              /* 老版Safari */
+ 	opacity: $all; 
+ }
+body{font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;background-color: rgb(238,238,238); a{text-decoration: none;color:rgb(102, 102, 102);} }
+.container{
+	position: relative;
+	width: 19rem;margin: 0 auto;min-width: 307px;max-width: 490px;
+	.header{
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		@include boxShadow( 0 1px 1px 0 #c4c4c4);
+		background: -webkit-gradient(linear,0 0,0 100%,from(#f8f8f8),to(#e6e6e6));
+		text-align: center;
+		position: relative;
+		font-size: 20px;
+		.back{position:absolute; left: 15px;a{ padding:4px; text-decoration: underline;font-size: 14px;}}
+	}
+	.login-form{
+		margin: 20px 25px;
+		.username,.password{margin-bottom: 10px;width: 100%;}
+		input{outline: none;width: 100%;height: 36px;
+			padding: 4px;border: 2px solid #d7d7d7;font-size: 14px;
+		}
+		button{width: 100%;height: 44px;border: none;
+			@include borderRadius(2px);
+			@include boxShadow(0 -1px 0 #bf3210 inset);
+		 background:-webkit-gradient(linear,0 0,0 100%,color-stop(0,#f50),color-stop(1,#f40));
+		margin-top: 10px;
+		 font-size: 18px; color: #fff;font-weight: 600;
+		}
+		
+	}
+	.nologin{
+		color: #333;
+		font-size: 14px;
+	}
+	.farther{
+		margin: 0 25px;
+		span:nth-child(1){ float:left; }
+		span:nth-child(2){ float:right; }
+		a{text-decoration: underline;font-size: 18px;}
+	}
+	.tips{
+		@include _opacity(0);
+		@include _transation(all 0.5s);
+		position: absolute;left:30px;top: 320px;
+		color:#C2C2C2;
+		padding: 20px 20px;
+		font-size: 16px;
+		background-color: rgba(0,0,0,0.7);
+		@include borderRadius(3px);
+		@include boxShadow(1px 1px 10px #324241);
+	}
+}

@@ -1,0 +1,156 @@
+@charset "UTF-8";
+.chat_header {
+  height: 50px; }
+
+.chat_container {
+  border: 1px solid #e5e5e5;
+  margin: 10px 200px;
+  overflow: hidden; }
+  .chat_container .chat_sm {
+    padding: 10px;
+    float: left;
+    width: 24%; }
+    .chat_container .chat_sm p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 20px; }
+  .chat_container .chat_wrap {
+    float: left;
+    width: 73.75%;
+    overflow: hidden;
+    border-left: 1px solid #e5e5e5; }
+    .chat_container .chat_wrap .chat_body {
+      min-height: 400px;
+      overflow-y: auto;
+      max-height: 400px;
+      overflow-x: hidden;
+      font-size: 14px; }
+  .chat_container .chat_input {
+    background-color: #e5eff7;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 10px; }
+    .chat_container .chat_input input {
+      float: right;
+      margin-left: 220px;
+      height: 24px;
+      padding: 4px;
+      border: 1px solid #2389da;
+      outline: none;
+      boxsizing: content-box; }
+    .chat_container .chat_input button {
+      cursor: pointer;
+      float: right;
+      margin-right: 50px;
+      border: 0;
+      width: 50px;
+      height: 34px;
+      background-color: #2389da; }
+
+.sym {
+  text-align: center;
+  width: auto;
+  margin-top: 15px; }
+
+.sym span {
+  background-color: gray;
+  padding: 3px 10px 3px 10px;
+  -moz-border-radius: 10px;
+  /* Firefox */
+  -webkit-border-radius: 10px;
+  /* Safari 和 Chrome */
+  border-radius: 10px;
+  /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */ }
+
+.users {
+  overflow: hidden;
+  position: relative;
+  top: 15px;
+  left: 20px;
+  margin-bottom: 20px; }
+
+.img {
+  float: left;
+  background: url(/images/1.png);
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -moz-border-radius: 5px;
+  /* Firefox */
+  -webkit-border-radius: 5px;
+  /* Safari 和 Chrome */
+  border-radius: 5px;
+  /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */ }
+
+.neir {
+  background-color: white;
+  border: yellow;
+  -moz-border-radius: 7px;
+  /* Firefox */
+  -webkit-border-radius: 7px;
+  /* Safari 和 Chrome */
+  border-radius: 7px;
+  /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+  padding: 8px 8px 6px 6px;
+  position: absolute;
+  left: 60px;
+  top: 65%;
+  transform: translateY(-50%); }
+
+.name {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.time {
+  display: inline-block; }
+
+.users1 {
+  overflow: hidden;
+  position: relative;
+  top: 15px;
+  right: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  z-index: -2; }
+
+.img1 {
+  float: right;
+  background: url(/images/1.png);
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -moz-border-radius: 5px;
+  /* Firefox */
+  -webkit-border-radius: 5px;
+  /* Safari 和 Chrome */
+  border-radius: 5px;
+  /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */ }
+
+.neir1 {
+  background-color: white;
+  border: yellow;
+  -moz-border-radius: 7px;
+  /* Firefox */
+  -webkit-border-radius: 7px;
+  /* Safari 和 Chrome */
+  border-radius: 7px;
+  /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+  padding: 8px 8px 6px 6px;
+  position: absolute;
+  right: 60px;
+  top: 65%;
+  transform: translateY(-50%); }
+
+.name1 {
+  position: absolute;
+  right: 130px; }
+
+.time1 {
+  position: absolute;
+  right: 60px; }

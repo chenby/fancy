@@ -1,0 +1,82 @@
+ $headerGray: rgb(242,242,242);
+  $lightRed:rgb(192,0,0);
+@mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }
+ @mixin boxShadow($shadow){
+   -moz-box-shadow:$shadow;
+       -webkit-box-shadow:$shadow;
+       box-shadow:$shadow;
+   }
+.login{
+ 	width: 100%;
+ 	background-color:orange;
+ 	overflow: hidden;
+ 	.comeback{
+ 		margin:10px 50px;
+ 		a{ text-decoration: none;color: #000;font-size: 17px;
+			&:hover{ text-decoration:underline;color:rgb(60,192,245);  }
+ 		}
+ 	}
+ 	.login_form{
+ 		background-image: url(/images/1419584179526.jpg);
+ 		background-repeat:no-repeat;
+ 		background-size:100% 100%;
+ 		height: 630px;
+ 		margin-bottom: 100px;
+ 		position: relative;
+ 		form{
+ 			.login_form_wrap{
+ 				padding: 15px;
+ 			}
+ 			@include borderRadius(10px);
+ 			width: 310px;
+ 			height: 330px;
+ 			background-color: #fff;
+ 			position: absolute;
+ 			top: 100px;
+ 			left: 250px;
+ 			display: inline-block;
+ 			.username,.password{ margin-top: 20px;margin-left: 10px; overflow: hidden;
+ 				label{
+ 					float: left;
+ 					background-color:rgb(204,204,204);
+ 					display: inline-block;
+ 				width: 37px;height: 37px;
+ 				text-align: center;
+ 				line-height: 37px;
+ 				color: #fff;
+ 				 }
+ 				 input{ width: 190px; padding-left: 4px;font-size: 15px; float: left; height: 32px;outline: none;border: 1px solid rgb(204,204,204);}
+ 			}
+
+ 			.change{
+ 				width: 100%;
+ 				height: 58px;
+ 				line-height: 58px;
+ 				overflow: hidden;
+
+ 				span{
+ 					float: left;
+ 					display: inline-block;
+ 					width: 125px;
+ 					height: 55px;
+ 					font-size: 17px;
+ 					color: #000;
+ 					font-weight: 666;
+ 					cursor: pointer;
+ 					text-align: center;
+ 					border-bottom: 2px solid  $headerGray;
+ 				}
+ 			}
+ 			.forget_pas{ margin: 10px 0; a{text-decoration: none;font-size: 13px; color:#000;margin:0px 5px;&:hover{color:$lightRed;text-decoration:underline;}} }
+ 		 input[type=submit]{ margin-left: 5px; cursor:pointer; border:0;width: 250px;height: 37px;background-color: rgb(255,68,0);@include borderRadius(5px); color: #fff;font-weight: 666;margin-top: 10px;font-size: 14px;}
+ 		input:disabled{background-color: #d4cfc9; }
+ 		}
+ 	}
+ }
+ .bottom_red{ border-bottom: 2px solid  $lightRed !important;}
+ .change_sec2{  div{ margin: 45px 0 20px 65px;display: inline-block; @include boxShadow(0 0 2px 2px rgb(204,204,204))}
+ p{margin-left: 55px;} }

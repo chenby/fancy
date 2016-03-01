@@ -1,0 +1,37 @@
+
+<% include header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
+<div class="register">
+	<div class="comeback"><i class='icon-reply'></i>&nbsp;<a href="/">回到首页</a></div>
+	<div class="form_wrap">
+		<div class="form">
+			<form method="post">
+			 <div>
+			 	<label for="username">用户名:</label><input  minlength='6' require style="margin-left:26px;" type="name" placeholder="输入用户名（至少 3 个字符）" name="username">
+			 	<span><i class='icon-remove-circle icon-large'></i>您输入的用户名少于3个字符</span>
+			 </div>	
+			<div>
+				<label for="password" >密码:</label><input minlength='6' style="margin-left:45px;" type="password" placeholder="输入密码" name="password" require>
+				<span><i class='icon-remove-circle icon-large'></i>您输入的密码太简单</span>
+			</div>
+			<div>
+				<label for="repassword">重复密码:</label><input style="margin-left:12px;" type="password" placeholder="重复输入密码" name="repassword" require>
+				<span><i class='icon-remove-circle icon-large'></i>您输入的两次密码不一致</span>
+			</div>
+			<div>
+				<label for="telephone">手机号码:</label><input style="margin-left:12px;" type="telephone" placeholder="输入手机号">
+				<span><i class='icon-remove-circle icon-large'></i>请输入正确的号码</span>
+			</div>	
+			<div>
+				<label for="email">邮箱:</label><input style="margin-left:44px;" type="email" placeholder="输入邮箱">
+				<span><i class='icon-remove-circle icon-large'></i>请输入正确的邮箱</span>
+			</div>
+			<span class="fuwu"><input type="checkbox" name="aa"><p>同意《本公司服务协议》</p></span> 
+				<input class="submit" type="submit" disabled="ture" value="注 册">
+			</form>
+		</div>
+	</div>
+</div>
+
+<% include footer.ejs %>
+<script type="text/javascript" src="/javascripts/register.js"></script>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fancy购物车</title>
+	<meta name=keywords content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css-reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/mobile-shopping.css">
+</head>
+<body>
+<div class="container">
+	<header class='header'>
+		<a href="/">&lt;</a>
+		<span>购物车(<b class='orange'><%= user.cartNum %></b>)</span>
+	</header>
+	<% if(result&&result!=''){ %>
+	<div class="content-wrap">
+	<% for (var i = 0; i < result.length; i++) { %>
+		<div class="body-wrap">
+			<div class="check">
+				<span class='checkOut' name='check'></span>
+				<p>一生守候你</p>
+				<span class='change'>编辑</span>
+			</div>
+			<div class="content">
+				<span class='checkOut' name='check' data-num='check' data-no='<%= i %>'></span>
+				<div class="goods-pic"><img src="/images/cloth/1.jpg"></div>
+				<div class="goods-more">
+					<span class='goodsname' name='sp_name<%= i %>'><%= result[i].name %></span>
+					<div class="num-ctrl" style="display: none;">
+						<a href="javascript:void(0);"  class="pass" >-</a>
+						<input type="number" value=1>
+						<a href="javascript:void(0);" class="add" >+</a></div> 
+					<span class='goodscolor'>颜色分类</span>
+					<span class='orange'>￥<b class="price<%= i %>"><%= result[i].price %></b></span>
+				</div>
+				<span class='number' name="num<%= i %>">x1</span>
+			</div>
+			<div class="remove">
+				<div></div>
+				<span>删除</span>
+			</div>
+		</div>
+	<% }; %>
+	<% }else{ %>
+		<div class="cart_none">
+		 <img src="/images/mobile/iconfont-shoppingcart.png">
+				<div>
+					<span>购物车空空的哦~，去看看心仪的商品吧~</span>
+					<p><a href="/">去购物>></a></p>
+				</div>	
+		</div>
+	<% } %>
+		<!-- 
+		<div class="body-wrap">
+			<div class="check">
+				<span class='checkOut' name='check'></span>
+				<p>一生守候你</p>
+				<span class='change'>编辑</span>
+			</div>
+			<div class="content">
+				<span class='checkOut' name='check'></span>
+				<div class="goods-pic"><img src="/images/cloth/1.jpg"></div>
+				<div class="goods-more">
+					<span class='goodsname'>asdasdadsasdadadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsas11111asdadsasdasdadsasdasdads</span>
+					<span class='goodscolor'>颜色分类</span>
+					<span class='orange'>￥<b >10.00</b></span>
+				</div>
+				<span class='number'>x1</span>
+			</div>
+		</div> -->
+	</div>
+	<footer class='footer'>
+		<div class="choose_all">
+			<span class='checkOut' name='check'></span>
+			<p>全选</p>
+		</div>
+		<div class="submit">
+		<form method="post" action="../shoppingCart">
+			<input class="all" type="hidden" name="allmon" value="0">
+			<button id="submit">结算</button>
+		</form>			
+		</div>
+		<div class="add-all">
+			<p>合计：<b class='orange' id="all_money">0</b>元</p>
+			<p>不含运费</p>
+		</div>
+	</footer>
+	<div class='your_money' style="display:none">
+		<%= user.money %>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	window.onload=function(){
+		var checkbox_arr=document.getElementsByName('check');	
+		var allmoney=document.getElementById('all_money');//总金额v
+		//点击删除订单
+	
+		for (var i = 0; i <$('.remove').length; i++) {
+	  		$('.remove')[i].ontouchend=$('.remove')[i].onclick=function(){
+				  $($(this).parent('.body-wrap')[0]).remove();
+				  var remove_name=$(this).prev('.content').children('.goods-more').children('.goodsname').text();
+				 $.post('../remove_shop',{remove_name:remove_name},function(){
+					 location.reload();
+				})
+				 checkmoney()
+		  	}
+		};
+		
+		//每个checkbox点击
+		 for (var i = 0; i < checkbox_arr.length-1; i=i+2) {//处理商家点击全选
+			checkbox_arr[i].ontouchend=checkbox_arr[i].onclick=function(){
+				var nextCheckbox=this.parentNode.nextElementSibling.childNodes[1];
+				if (nextCheckbox) {
+					if ( nextCheckbox.className=='checkIn') {
+						nextCheckbox.className=this.className='checkOut';
+					}else{		
+						nextCheckbox.className=this.className='checkIn';
+					}	
+				}
+				 checkmoney()
+			}
+		};//处理商家点击全选
+		 for (var i = 1; i < checkbox_arr.length-1; i=i+2) {//处理商品点击全选
+			checkbox_arr[i].ontouchend=checkbox_arr[i].onclick=function(){ 
+				var prevCheckbox=this.parentNode.previousElementSibling.childNodes[1];
+				if (prevCheckbox) {
+					if ( prevCheckbox.className=='checkIn') {
+						prevCheckbox.className=this.className='checkOut';
+					}else{		
+						prevCheckbox.className=this.className='checkIn';
+					}	
+				}
+				checkmoney()
+			}
+		};//处理商品点击全选
+		
+		//处理全选按钮
+		var checkAll=checkbox_arr[checkbox_arr.length-1];
+	 	checkAll.ontouchend=checkAll.onclick=function(){
+	 		if ( this.className=='checkIn') {
+	 			for (var i = 0; i < checkbox_arr.length; i++) {
+	 				checkbox_arr[i].className='checkOut';
+	 			};	
+	 		}else{
+	 			for (var i = 0; i < checkbox_arr.length; i++) {
+	 				checkbox_arr[i].className='checkIn';
+	 			};	
+	 		}
+	 		checkmoney() 			
+	 	}//处理全选按钮
+		//点击编辑
+		var bianji=document.getElementsByClassName('change');
+		for (var i = 0; i < bianji.length; i++) {
+			bianji[i].ontouchend=bianji[i].onclick=function(){
+				var goods_name=this.parentNode.nextElementSibling.childNodes[5].childNodes[1];
+				var remove=this.parentNode.nextElementSibling.nextElementSibling;
+				var num_ctrl=this.parentNode.nextElementSibling.childNodes[5].childNodes[3];
+				var content=this.parentNode.nextElementSibling;
+				if (num_ctrl.style.display=='none') {
+					num_ctrl.style.display='block';
+					 goods_name.style.display='none';
+					 content.style.left='-60px'
+				}else{
+					num_ctrl.style.display='none';
+					 goods_name.style.display='block';
+					 content.style.left='0'
+				}
+			}
+		};
+		//增加减少函数
+		var add=document.getElementsByClassName('add');
+		var pass=document.getElementsByClassName('pass');
+		for (var i = 0; i < add.length; i++) {
+			add[i]=add[i].onclick=function(){
+				if (!isNaN(this.previousElementSibling.value)){
+					this.previousElementSibling.value++;
+				}else{alert('商品数量超出范围');this.previousElementSibling.value=1;}
+				this.parentNode.parentNode.nextElementSibling.innerText="x"+this.previousElementSibling.value;//x数字修改		 
+				checkmoney()
+			}
+			pass[i].ontouchend=pass[i].onclick=function(){
+				if ( !isNaN(this.nextElementSibling.value)&&this.nextElementSibling.value>1) {
+					this.nextElementSibling.value--;
+				}else{alert('商品数量超出范围');this.nextElementSibling.value=1;};
+				this.parentNode.parentNode.nextElementSibling.innerText="x"+this.nextElementSibling.value;//x数字修改
+				checkmoney()
+			}
+		};
+
+		//提交submit
+
+		$('#submit')[0].ontouchend=$('#submit')[0].onclick=function(){
+			var obj =[];var length = 0;
+			 for (var i = 0; i < $('span[data-num=check].checkIn').length; i++) {
+			 	var num = $('span[data-num=check].checkIn').eq(i).attr('data-no');
+			  
+			 	obj[i]={
+			 		'sp':$(document.getElementsByName('sp_name'+num)[0]).html(),
+			 		'price':$('.price'+num).html(),
+			 		'num':$(document.getElementsByName('num'+num)[0]).html().substr(1,this.length)
+			 	}		 	
+		 	}	
+			length =$('span[data-num=check].checkIn').length;
+		 	var allmon = $('#all_money').html();	 	 
+		 	if (($('.your_money').html()-allmon)>=0&&allmon!=0) {
+			 	$.post('/submit',{obj:JSON.stringify(obj),lengtha:length,allmon:allmon});
+			}else{
+				alert('您的钱不够哦')
+			}
+		} 
+
+		//总金额
+		function checkmoney(){
+			var checkNum=$('span[data-num=check].checkIn');
+			var allmoney_=0;	
+			if ( checkNum.length) {
+				for (var i = 0; i < checkNum.length; i++) {
+					var all_num_=checkNum[i].nextElementSibling.nextElementSibling.nextElementSibling.innerText;
+					var all_num=all_num_.substr(1,all_num_.length)
+					var price_=checkNum[i].nextElementSibling.nextElementSibling.childNodes[7].childNodes[1].innerText;	
+					var one_price=parseFloat(all_num)*parseFloat(price_);
+					allmoney_+=one_price;					
+				};
+				allmoney.innerText=allmoney_.toFixed(2)
+			}else{
+				allmoney.innerText=0;
+			}
+			$('.all').val(allmoney.innerText);
+		}
+
+
+		
+	}
+</script>
+<script type="text/javascript" src="/javascripts/rem-init.js"></script>
+<script type="text/javascript" src="/javascripts/zepto.min.js"></script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fancy手机充值</title>
+	<meta name=keywords content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css-reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/mobile-chong.css">
+</head>
+<body>
+ <div class="container">
+ 	<header class='chongzhi'>
+ 		<a href="/"><span class='return'></span></a>
+ 		充值
+ 		<span class='more'></span>
+ 	</header>
+ 	<div class="chong-change">
+	 	<div class="chong-b">
+	 		<span class='active'>充商城币</span>
+	 	</div>
+ 		<div class="chong-h">
+ 			<span>充话费</span>
+ 		</div>	
+ 	</div>
+ 	<div class="chong-body">
+ 		<div class="chong-body-b">
+ 			<form method="post" action="../voucher">
+ 				<input type="number" placeholder='请输入充值金额' name="got_money">
+ 				<button type="submit">立即充值</button>
+ 			</form>
+ 		</div>
+ 		<div class="chong-body-h none">
+ 			<form method="post" action="../voucher">
+ 				<input type="number" placeholder='请输入充值金额' name="got_money">
+ 				<div class="chong-h-money">
+ 					<span>10元</span><span>20元</span><span>30元</span><span>50元</span><span>80元</span><span>100元</span><span>200元</span><span>300元</span><span>500元</span>
+ 				</div>
+ 				<button type="submit">立即充值</button>
+ 			</form>
+ 		</div>
+ 	</div>
+ 	<div class="chong-watch">
+ 		<span>查看我的充值记录</span>
+ 	</div>
+ 	<footer class='footer'>
+	  <div class="dl-wrap">
+	  	 <div class="dl">
+	  	 	<ul>
+	  	 		<li class="borerRight"><a href="/mobile/login">登录</a></li>
+	  	 		<li class="borerRight"><a href="">注册</a></li>
+	  	 		<li class="borerRight"><a href="">反馈</a></li>
+	  	 		<li><a href="#">回到顶部</a></li>
+	  	 	</ul>
+	  	 </div>
+	  </div>
+	   <div class="khd-wrap">
+	  	 <div class="khd">
+		  	 <ul>
+		  	 	<li class="borerRight"><a href="">客户端</a></li>
+		  	 	<li><a href="">触屏版</a></li>
+		  	 </ul>
+	  	 </div>
+	  	</div>
+	  	 <p>
+	  	 	Copyright © 2012-2015 fancy.com 版权所有
+	  	 </p>
+	</footer>
+ </div>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		var change_b=document.getElementsByClassName('chong-b')[0];
+		var change_h=document.getElementsByClassName('chong-h')[0];
+		var b=document.getElementsByClassName('chong-body-b')[0];
+		var h=document.getElementsByClassName('chong-body-h')[0];
+		//点击切换选择
+		change_b.onclick=change_b.onmouseend=function(){
+			change_b.childNodes[1].className='active';
+			change_h.childNodes[1].className='';
+			b.className='chong-body-b';
+			h.className='chong-body-h none';
+		}
+		change_h.onclick=change_h.onmouseend=function(){
+			change_b.childNodes[1].className='';
+			change_h.childNodes[1].className='active';
+			b.className='chong-body-b none';
+			h.className='chong-body-h';
+		}
+
+	}
+</script>
+<script type="text/javascript" src="/javascripts/rem-init.js"></script>

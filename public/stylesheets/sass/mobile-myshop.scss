@@ -1,0 +1,91 @@
+ @mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }   
+body{font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;background-color: rgb(238,238,238); a{text-decoration: none;color:rgb(102, 102, 102);} }
+.container{
+	.color{
+		width: 100%;
+		height: 20px;
+		font-size: 12px;
+		line-height: 20px;min-width:305px;
+		a{color: #000;margin-left: 10px;text-decoration:underline;}
+	}
+	.red{background-color: #D39393;b{font-size: 12px;margin-left: 34px;}}
+	.orange{background-color: rgb(171, 181, 84)}
+	.green{background-color: #2FF22F;}
+	.blue{background-color:rgb(143, 143, 231)}
+	.user{position: absolute;right: 5px;top: 46px; overflow: hidden; div{float: left;overflow: hidden;@include borderRadius(50%)}}
+	.user-header{
+		overflow: hidden;
+		height: 45px;
+		font-size: 15px;min-width:305px;
+		background-color: rgb(207, 87, 87);
+		ul{overflow: hidden;
+			line-height: 45px;
+			li{float: left;margin-left: 1rem;a{color: #fff;font-weight: 300;}}
+		}
+	}
+	.user-nav{height: 70px;background-color: #fff;min-width:305px;
+		margin-top: 20px;border-bottom: 1px solid rgb(219, 219, 219);
+		ul{ li{
+			text-align: center;
+			a{font-size: 14px;display: block;overflow: hidden;}
+			span{margin-top: 10px; display: inline-block;width: 32px;height: 32px;vertical-align:top;}
+			p{vertical-align:top;margin-top: 2px;}
+			float: left;
+			width: 20%;
+		}}
+	}
+	.user-all{font-size: 12px;color: #999;overflow: hidden;min-width:305px;min-height: 360px;
+		.commen-all{overflow: hidden;background-color: #fff;
+			a{display: block;width: 100%;height: 100%;}
+			line-height: 45px;height: 45px;border-bottom: 1px solid #C0BEBE;
+			.all-icon{ width: 32px;height: 100%;margin: 8px 0px 0 10px; float: left;span{display: inline-block; width: 32px;height: 32px;}}
+			p{float: right;}
+			.all-word{float: left;margin-left: 4px; }
+			.all-gt{width: 32px;float: right;margin: 4px  5px 10px 5px; b{display: inline-block;background: url(/images/mobile/sprite.png) -381px -0px no-repeat;width: 16px;height: 16px;}}
+		}
+	}
+	.nav1{background: url(/images/mobile/sprite.png) -96px -0px no-repeat;}
+	.nav2{background: url(/images/mobile/sprite.png) -64px -0px no-repeat;}
+	.nav3{background: url(/images/mobile/sprite.png) -192px -0px no-repeat;}
+	.nav4{background: url(/images/mobile/sprite.png) -128px -0px no-repeat;}
+	.nav5{background: url(/images/mobile/sprite.png) -32px -0px no-repeat;}
+	.icon1{background: url(/images/mobile/sprite.png) no-repeat;}
+	.icon2{background: url(/images/mobile/sprite.png) -288px -0px no-repeat;}
+	.icon3{background: url(/images/mobile/sprite.png) -256px -0px no-repeat;}
+	.icon4{background: url(/images/mobile/sprite.png) -350px -0px no-repeat;}
+	.icon5{background: url(/images/mobile/sprite.png) -224px -0px no-repeat;}
+	.icon6{background: url(/images/mobile/sprite.png) -160px -0px no-repeat;}
+	.icon7{background: url(/images/mobile/sprite.png) -320px -0px no-repeat;}
+	.footer{margin-top: 20px;
+		background-color: #fff;
+		font-size: 14px;
+		overflow: hidden;
+		margin-bottom: 40px;
+		p{ text-align: center;margin: 10px 0;}
+		a{text-decoration: none;color:rgb(102, 102, 102);}
+		ul{overflow: hidden;margin:10px 0; 
+			li{float: left; text-align: center;}
+		 
+		}
+		.dl-wrap,.khd-wrap{border-bottom:1px solid rgb(219,219,219);overflow: hidden;width: 100%;
+			div{overflow:hidden;width: 320px;margin: 5px auto; }
+		}
+		.dl{
+			ul{
+				li{width: 24%;}
+				} 
+		}
+		.khd{
+			ul {
+				li{width:49%;}
+			}
+		}
+		.borerRight{border-right: 1px solid rgb(219,219,219);}
+	}
+
+
+}

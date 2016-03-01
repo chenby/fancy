@@ -1,0 +1,191 @@
+@charset "UTF-8";
+body {
+  overflow-x: hidden; }
+
+.adm-container {
+  width: 100%;
+  min-width: 1366px;
+  /*body*/ }
+  .adm-container .adm-header {
+    overflow: hidden;
+    width: 100%;
+    height: 70px;
+    background-color: #2d2d2d; }
+    .adm-container .adm-header a {
+      text-decoration: none;
+      color: #e8e8e8; }
+    .adm-container .adm-header .header-left {
+      padding-top: 3px;
+      width: 250px;
+      height: 100%;
+      float: left; }
+      .adm-container .adm-header .header-left img {
+        height: 60px;
+        width: 250px; }
+      .adm-container .adm-header .header-left a {
+        color: #fff; }
+    .adm-container .adm-header .header-right {
+      float: left;
+      width: 80%;
+      min-width: 1093px;
+      height: 100%;
+      overflow: hidden; }
+      .adm-container .adm-header .header-right ul {
+        margin-left: 10px;
+        margin-top: 36px;
+        float: left;
+        overflow: hidden; }
+        .adm-container .adm-header .header-right ul .active {
+          background-image: url(/images/aa.png);
+          background-color: #DAA520; }
+          .adm-container .adm-header .header-right ul .active a {
+            color: #fff; }
+          .adm-container .adm-header .header-right ul .active:active {
+            background-color: orange; }
+        .adm-container .adm-header .header-right ul li {
+          display: inline-block;
+          width: 100px;
+          height: 35px;
+          float: left;
+          -moz-border-top-left-radius: 5px;
+          /* Firefox */
+          -webkit-border-top-left-radius: 5px;
+          /* Safari 和 Chrome */
+          border-top-left-radius: 5px;
+          /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+          -moz-border-top-right-radius: 5px;
+          /* Firefox */
+          -webkit-border-top-right-radius: 5px;
+          /* Safari 和 Chrome */
+          border-top-right-radius: 5px;
+          /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+          text-align: center;
+          cursor: pointer; }
+          .adm-container .adm-header .header-right ul li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 35px;
+            font-size: 14px; }
+      .adm-container .adm-header .header-right .user {
+        float: right;
+        margin-top: 45px; }
+        .adm-container .adm-header .header-right .user a {
+          font-size: 13px;
+          margin-right: 10px; }
+          .adm-container .adm-header .header-right .user a:hover {
+            color: orange;
+            text-decoration: underline; }
+        .adm-container .adm-header .header-right .user .add_border {
+          border-right: 1px solid gray;
+          padding-right: 10px; }
+  .adm-container .body {
+    overflow: hidden;
+    /*.body-left*/
+    /*.body-right*/ }
+    .adm-container .body a {
+      text-decoration: none;
+      color: #000;
+      font-size: 14px; }
+    .adm-container .body .body-left {
+      float: left;
+      width: 260px;
+      height: 100%;
+      min-height: 580px;
+      background-color: #eef9ff;
+      overflow: hidden; }
+      .adm-container .body .body-left div {
+        margin: 20px 0px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #cfe6f4; }
+        .adm-container .body .body-left div .border-left {
+          background-image: url(/images/ul-bgi.png);
+          border-left: 5px solid orange;
+          background-color: #e5f3fe; }
+        .adm-container .body .body-left div h2 {
+          cursor: pointer;
+          font-size: 15px;
+          font-weight: 600;
+          margin: 0 20px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center; }
+          .adm-container .body .body-left div h2 i {
+            margin-left: 3px; }
+        .adm-container .body .body-left div ul li {
+          cursor: pointer;
+          border-left: 5px solid #eef9ff;
+          height: 30px;
+          line-height: 30px;
+          margin-top: 5px; }
+          .adm-container .body .body-left div ul li a {
+            display: block;
+            height: 100%;
+            padding-left: 83px;
+            color: gray; }
+            .adm-container .body .body-left div ul li a:hover {
+              text-decoration: underline;
+              color: #c00000; }
+    .adm-container .body .body-right {
+      float: left;
+      min-width: 1100px; }
+      .adm-container .body .body-right .boxshadowTop {
+        -webkit-box-shadow: 0px 7px 15px gray;
+        /*0 0 8px rgba(82, 168, 236, 0.6);*/
+        -moz-box-shadow: 0px 7px 15px gray;
+        box-shadow: 0px 7px 15px gray; }
+      .adm-container .body .body-right .boxshadowLeft {
+        -webkit-box-shadow: 10px 0px 18px gray;
+        /*0 0 8px rgba(82, 168, 236, 0.6);*/
+        -moz-box-shadow: 10px 0px 18px gray;
+        box-shadow: 10px 0px 18px gray; }
+      .adm-container .body .body-right .sheets {
+        margin-top: 7px;
+        width: 1050px;
+        min-height: 550px; }
+        .adm-container .body .body-right .sheets .common-container {
+          width: 100%;
+          padding-bottom: 20px;
+          margin-bottom: 20px; }
+        .adm-container .body .body-right .sheets .common-nav {
+          margin: 20px 30px;
+          font-size: 14px;
+          border-bottom: 2px solid #e8e8e8;
+          padding: 20px 0; }
+          .adm-container .body .body-right .sheets .common-nav a:hover {
+            color: #c00000;
+            text-decoration: underline; }
+        .adm-container .body .body-right .sheets .com-table {
+          margin-left: 30px;
+          width: 950px;
+          border: 2px solid #079e9e;
+          font-size: 14px;
+          font-family: '微软雅黑'; }
+        .adm-container .body .body-right .sheets .com-table .tHead {
+          font-size: 15px;
+          font-weight: 600;
+          background-color: #eaeaea;
+          height: 26px;
+          padding: 4px;
+          border-bottom: 1px solid #d4d4d4; }
+        .adm-container .body .body-right .sheets .com-table .tHead td {
+          line-height: 26px; }
+        .adm-container .body .body-right .sheets .com-table tr {
+          cursor: pointer; }
+        .adm-container .body .body-right .sheets .com-table tr:nth-child(even) {
+          background-color: #f3f3f3; }
+        .adm-container .body .body-right .sheets .com-table td {
+          border-right: 1px solid #d4d4d4;
+          height: 30px;
+          line-height: 30px;
+          padding: 3px; }
+        .adm-container .body .body-right .sheets .com-table tr:hover {
+          background-color: #c9dde1; }
+        .adm-container .body .body-right .sheets .icon-remove {
+          color: red;
+          margin-right: 5px; }
+        .adm-container .body .body-right .sheets .icon-remove + a:hover {
+          text-decoration: underline;
+          color: #c00000; }
+
+/*.adm-container*/

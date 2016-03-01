@@ -1,0 +1,28 @@
+<div class="common-container">
+	<div class="common-nav"><span>您现在的位置 >></span><a href="#shopping">&nbsp;订单列表管理</a></div>
+	<table class="com-table" ng-controller="shopping.list">
+	 <tr class="tHead"  > 
+	 	<td>所属用户</td>
+	 	<td>商品名</td>
+	 	<td>价格</td>  
+	 	<td>是否可用</td>
+	 	<td>操作</td>
+	 </tr> 
+	 <tr ng-repeat="showdata in showdata">
+	 	<td>{{ showdata.user }}</td> 
+	 	<td>{{ showdata.name }}</td> 
+	 	<td>{{ showdata.price }}</td> 
+	 	<td>yes</td> 
+	 	<td><i class='icon-remove'></i><delat>删除</delat></td> 
+	 </tr> 
+	 <tr> 
+	 	<td>bbbb</td> 
+	 	<td>瓦的风啊啊是的</td> 
+	 	<td>120</td> 
+	 	<td>yes</td> 
+	 	<td><i class='icon-remove'></i><a href="">删除</a></td> 
+	</tr> 
+	 
+	
+	</table>
+</div>

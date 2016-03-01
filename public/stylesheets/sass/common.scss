@@ -1,0 +1,118 @@
+  $lightRed:rgb(192,0,0);
+   @mixin borderRadiusRT($radius){
+ 	 -moz-border-top-left-radius:$radius; /* Firefox */
+  	-webkit-border-top-left-radius: $radius; /* Safari 和 Chrome */
+  	border-top-left-radius:$radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+  	 -moz-border-top-right-radius: $radius; /* Firefox */
+  	-webkit-border-top-right-radius: $radius; /* Safari 和 Chrome */
+  	border-top-right-radius: $radius;/* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }
+ @mixin boxShadow($shadow){
+ 	-webkit-box-shadow:$shadow; /*0 0 8px rgba(82, 168, 236, 0.6);*/
+	-moz-box-shadow: $shadow; 
+	box-shadow: $shadow; 
+ }
+ body{overflow-x: hidden;}
+ .adm-container{
+ 	
+ 
+ 	width: 100%;
+ 	min-width:1366px;
+ 	.adm-header{
+ 			a{text-decoration: none;color: rgb(232,232,232);}
+ 		overflow: hidden;
+ 		width: 100%;
+ 		height: 70px;
+ 		background-color:rgb(45,45,45);
+ 		.header-left{
+ 			padding-top: 3px;
+ 			width: 250px;
+ 			height: 100%;
+ 			float: left;
+ 			img{ height: 60px;width: 250px;}
+ 			a{color: #fff;}
+ 		}
+ 		.header-right{
+ 		float: left;
+ 		width: 80%;
+ 		min-width: 1093px;
+ 		height: 100%;
+ 		overflow: hidden;
+			ul{margin-left: 10px;
+				margin-top: 36px;
+				float: left;
+				overflow: hidden;
+				.active{ background-image: url(/images/aa.png); a{color:#fff;}background-color:#DAA520;&:active{background-color: orange;}}
+				li{display: inline-block;
+					width: 100px;
+					height: 35px;
+					float: left;
+					
+					@include borderRadiusRT(5px);
+					text-align: center;
+					cursor:pointer;
+					a{display: block;width: 100%;height: 100%; line-height: 35px; font-size: 14px;}
+				}
+			}
+			.user{float: right;margin-top: 45px; 
+				a{ font-size: 13px;margin-right: 10px;&:hover{ color:orange;text-decoration: underline;}}
+				.add_border{border-right: 1px solid gray;padding-right: 10px;}
+			}
+ 		}
+ 	}
+ 	.body{
+ 		overflow: hidden;
+ 		a{text-decoration: none;color: #000;font-size: 14px;}
+	 	.body-left{
+	 		float: left;
+	 		width: 260px;
+	 		height: 100%;
+	 		min-height: 580px;
+			background-color: rgb(238,249,255);
+			overflow: hidden;
+			div{
+			 .border-left{background-image: url(/images/ul-bgi.png); border-left: 5px solid orange;background-color: rgb(229,243,254);}
+				margin:20px 0px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid rgb(207,230,244);
+				h2{ cursor:pointer; font-size: 15px;font-weight: 600; margin: 0 20px; height: 30px;line-height: 30px; text-align: center;i{margin-left: 3px;} }
+				ul{
+					li{
+
+						cursor:pointer;
+						border-left: 5px solid rgb(238,249,255);
+						height: 30px;
+						line-height: 30px;
+						margin-top: 5px;
+						a{ display: block; height: 100%; padding-left: 83px;color: gray;&:hover{text-decoration:underline; color:$lightRed; }}
+					}
+				}
+			}
+	 	}/*.body-left*/
+	 	.body-right{ 
+	 		float: left;min-width: 1100px;
+	 		.boxshadowTop{	@include boxShadow(0px 7px 15px gray)}
+	 		.boxshadowLeft{@include boxShadow(10px 0px 18px gray)}
+	 		.sheets{
+	 			margin-top: 7px;
+	 			width: 1050px;
+	 			min-height: 550px;
+	 			.common-container{
+					width: 100%;
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+				}
+				.common-nav { a{&:hover{ color: rgb(192,0,0);text-decoration: underline;}} margin: 20px 30px;font-size: 14px;border-bottom: 2px solid  rgb(232,232,232);padding: 20px 0;}
+				.com-table{ margin-left: 30px;width: 950px; border: 2px solid rgb(7, 158, 158); font-size: 14px;font-family: '微软雅黑';}
+				.com-table .tHead{font-size: 15px;font-weight: 600; background-color: rgb(234,234,234);height: 26px;padding: 4px;border-bottom: 1px solid rgb(212,212,212)}
+				.com-table .tHead td{line-height: 26px;}
+					.com-table tr{cursor:pointer;}
+					.com-table tr:nth-child(even){background-color: rgb(243,243,243);}
+				.com-table td{border-right: 1px solid rgb(212,212,212);height: 30px;line-height: 30px;padding: 3px; }
+				.com-table tr:hover{background-color: rgb(201,221,225);}
+					.icon-remove{color: red;margin-right: 5px;}
+					.icon-remove+a:hover{text-decoration: underline;color: rgb(192,0,0);}
+	 		}
+	 	}/*.body-right*/
+ 	} /*body*/
+ }/*.adm-container*/

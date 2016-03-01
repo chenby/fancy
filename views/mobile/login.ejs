@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机登录</title>
+	<meta name=keywords content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css-reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/mobile-login.css">
+</head>
+<body>
+<div class="container">
+	<header class='header'>
+		<span class='back'><a href="/">返回</a></span>
+		<span>fancy手机登录</span>
+	</header>
+	<div class="login-body">
+		<form method="post" class="login-form">
+			<div class="username">
+				 <input type="text" name="username" placeholder='手机号/用户名'>
+			</div>
+			<div class="password">
+				<input type="password" name="password" placeholder='密码'>
+			</div>
+			<div class="nologin">
+				<span>两周内免登录</span>
+			</div>
+			<button class="submit" type="submit">登&nbsp;&nbsp;录</button>
+		</form>	
+		<div class="farther">
+			<span><a href="">快速注册</a></span>
+			<span><a href="">找回密码</a></span>
+		</div>
+	</div>
+	<div class="tips">
+		<p></p>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	window.onload=function(){
+		var submit=document.getElementsByClassName('submit')[0]
+		var username=document.getElementsByClassName('username')[0].children[0];
+		var password=document.getElementsByClassName('password')[0].children[0];
+		var tips=document.getElementsByClassName('tips')[0];	 
+		var tips_p=document.getElementsByClassName('tips')[0].children[0];	 
+		submit.onclick=function(){ //错误处理
+			 if (!(username.value&&password.value)) {
+			 	tips.style.opacity=1;
+			 	tips_p.innerText='用户名密码不能为空';
+			 	setTimeout(function(){
+			 		tips.style.opacity=0;
+			 	},3000);
+			 	return false;
+			 };
+		}
+	}
+</script>
+<script type="text/javascript" src="/javascripts/rem-init.js"></script>
+</html>

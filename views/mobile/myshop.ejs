@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的fancy</title>
+	<meta name=keywords content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css-reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/mobile-myshop.css">
+</head>
+<body>
+	<div class="container">
+		<div class="color orange"></div>
+		<div class="color green"><a href="/">返回</a></div>
+		<div class="color red"> 
+			<% if(user){  %>
+				<b style='color:#000;'><%= user.name %></i>,您的资金余额：<i>￥<%= user.money %></i></b>
+		 	<% } %>
+		</div>
+		<div class="color blue">
+			<a href="/logout" style="color:#000;margin-left:170px;">注销用户</a>
+		</div>
+		<div class="user">
+			<div>
+				<img src="/images/1.png">
+			</div>		
+		</div>
+		<div class="user-header"> 
+			<ul>
+				<li><a href="">收藏夹</a></li>
+				<li><a href="">收藏的宝贝</a></li>
+				<li><a href="">我的足迹</a></li>
+			</ul>
+		</div>
+		<div class="user-nav">
+			<ul>
+				<li><a href=""><span class='nav1'></span><p>待付款</p></a></li>
+				<li><a href=""><span class='nav2'></span><p>待发货</p></a></li>
+				<li><a href=""><span class='nav3'></span><p>待收货</p></a></li>
+				<li><a href=""><span class='nav4'></span><p>待评价</p></a></li>
+				<li><a href=""><span class='nav5'></span><p>退款/售后</p></a></li>
+			</ul>
+		</div>
+		<div class="user-all">
+			<div class="commen-all" style="margin-bottom:20px">
+				<a href="">
+				<div class="all-icon"><span class='icon1'></span></div>
+				<div class="all-word"><span>全部订单</span></div>
+				<div class="all-gt"><b></b></div>
+				<p>查看全部订单</p>
+				</a>
+			</div>
+
+			 <div class="commen-all">
+			 	<a href="/mobile/shopping">
+					<div class="all-icon"><span class='icon2'></span></div>
+					<div class="all-word"><span>购物车</span></div>
+					<div class="all-gt"><b></b></div>
+				</a>
+			</div>
+			 <div class="commen-all">
+				 <a href="/mobile/search">
+					<div class="all-icon"><span class='icon3'></span></div>
+					<div class="all-word"><span>搜索</span></div>
+					<div class="all-gt"><b></b></div>
+				</a>
+			</div>
+			 <div class="commen-all">
+				 <a href="">
+					<div class="all-icon"><span class='icon4'></span></div>
+					<div class="all-word"><span>我的账单</span></div>
+					<div class="all-gt"><b></b></div>
+				</a>
+			</div>
+			 <div class="commen-all" style="margin-bottom:20px">
+				 <a href="">
+					<div class="all-icon"><span class='icon5'></span></div>
+					<div class="all-word"><span>我的支付</span></div>
+					<div class="all-gt"><b></b></div>
+				</a>
+			</div>
+
+
+			 <div class="commen-all">
+				 <a href="">
+					<div class="all-icon"><span class='icon6'></span></div>
+					<div class="all-word"><span>我的彩票</span></div>
+					<div class="all-gt"><b></b></div>
+				</a>
+			</div>
+			 <div class="commen-all">
+				 <a href="">
+					<div class="all-icon"><span class='icon7'></span></div>
+					<div class="all-word"><span>我的机票</span></div>
+					<div class="all-gt"><b></b></div>
+				</a>
+			</div>
+		</div>
+
+		 <footer class='footer'>
+		  <div class="dl-wrap">
+		  	 <div class="dl">
+		  	 	<ul>
+		  	 		<li class="borerRight"><a href="/mobile/login">登录</a></li>
+		  	 		<li class="borerRight"><a href="">注册</a></li>
+		  	 		<li class="borerRight"><a href="">反馈</a></li>
+		  	 		<li><a href="#">回到顶部</a></li>
+		  	 	</ul>
+		  	 </div>
+		  </div>
+		   <div class="khd-wrap">
+		  	 <div class="khd">
+			  	 <ul>
+			  	 	<li class="borerRight"><a href="">客户端</a></li>
+			  	 	<li><a href="">触屏版</a></li>
+			  	 </ul>
+		  	 </div>
+		  	</div>
+		  	 <p>
+		  	 	Copyright © 2012-2015 fancy.com 版权所有
+		  	 </p>
+		  </footer>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="/javascripts/rem-init.js"></script>

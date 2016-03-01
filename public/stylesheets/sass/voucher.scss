@@ -1,0 +1,42 @@
+ $lightBule:rgb(60,192,245);
+  $lightRed:rgb(192,0,0);
+   @mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }
+.voucher_header{
+	height: 50px;
+	overflow: hidden;
+	img{float: left;margin-left: 100px;}
+	div{float: right;margin-right: 300px;margin-top:21px; color: rgb(149,192,149); font-size: 14px; a{text-decoration: none; color: $lightBule;&:hover{text-transform:underline; } }}
+}
+.voucher_container{margin: 20px 200px;overflow: hidden;border: 1px solid rgb(229,229,229); }
+.voucher_left{ 
+	float: left;background-color: rgb(246,246,246);width: 25%;border-right: 1px solid rgb(229,229,229);
+	.left_1{margin: 50px 45px 20px 20px;padding-bottom: 20px;  font-size: 26px;color: $lightRed;border-bottom: 1px solid rgb(227,227,227); }
+	.left_2{margin-left: 20px; color: #000;font-size: 14px;p{margin-top: 10px;}margin-bottom:100px;}
+	.left_3{margin:0 55px 30px 20px; padding-bottom: 10px; font-size: 13px;border-bottom: 1px solid rgb(227,227,227); }
+	.left_4{margin-left: 20px; margin-bottom: 100px; a{text-decoration: none;&:hover{text-decoration:underline; color:$lightBule;  } color: $lightRed;} font-size:14px;}
+}
+.voucher_right{float: left; width: 73%;
+	.voucher_wraps{margin: 20px 40px;}
+	div{margin-top: 20px;}
+	div:nth-child(1){
+		input{
+			width: 70px;
+			height: 30px;
+			border: 1px solid rgb(212,212,212);
+			font-size:16px;
+			padding-left: 10px;
+			margin:0 5px;
+		}
+	}
+	div:nth-child(3){ 
+		button{
+		 border: none;background-color: rgb(21,115,171);width: 95px;height: 40px;color: #fff;font-size: 14px;
+		 @include borderRadius(5px);cursor: pointer;
+		}
+	}
+}
+.orange{color: orange}

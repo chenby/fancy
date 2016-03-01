@@ -1,0 +1,67 @@
+<% include header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+<div class="login">
+	<div class="comeback"><i class='icon-reply'></i>&nbsp;<a href="/">回到首页</a></div>
+	<div class="login_form">
+		<form method="post">
+			<div class="login_form_wrap">
+				<div class="change">
+					<span class='bottom_red'>快速登陆</span>
+					<span >账号密码登陆</span>
+				</div>
+				<div class="change_sec1" style="display:none">
+					 <div class="username"><label for="username"><i class="icon-user icon-large"></i></label><input type="name" placeholder="手机/会员名/邮箱" name="username">
+					 </div>
+					 <div class="password"><label for="password"><i class='icon-lock icon-large'></i> </label><input type="password" placeholder="密码" name="password"></div>
+					 <div class="forget_pas"><a href="">忘记登录密码</a><a href="/register">免费注册</a> </div>
+					<input type="submit" disabled="disabled" value="登录">
+				</div>
+				<div class="change_sec2">
+					<div ><img src="/images/erweima.png"></div>
+					<p>手机扫码 安全登录</p>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<% include footer.ejs %>
+<script type="text/javascript">
+	$(function(){
+		var span1=$('.change>span')[0],
+			span2=$('.change>span')[1];
+			$(span1).click(function(){
+				$(this).addClass('bottom_red');
+				$(span2).removeClass('bottom_red');
+				$('.change_sec1').hide();
+				$('.change_sec2').show();
+			});
+			$(span2).click(function(){
+				$(this).addClass('bottom_red');
+				$(span1).removeClass('bottom_red');
+				$('.change_sec1').show();
+				$('.change_sec2').hide();
+			})
+		var username=$('.username>input[name=username]'),
+			password=$('.password>input[name=password]'),
+			login_form_wrap=$('.login_form_wrap');
+
+			username.keyup(function(){
+				check()
+			})
+			password.keyup(function(){
+				check()
+			})
+		login_form_wrap.click(function(){
+			check()
+		})
+		function check(){
+			if(!(username.val()==''||password.val()=='')){
+				$('input[type=submit]').removeAttr("disabled");
+			}else{
+				 $('input[type=submit]').attr('disabled','disabled')
+			}
+		}
+		 
+	})
+</script>
+ 

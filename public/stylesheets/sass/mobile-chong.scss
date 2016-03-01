@@ -1,0 +1,80 @@
+@mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }   
+
+body{font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;background-color: rgb(238,238,238); a{text-decoration: none;color:rgb(102, 102, 102);} }
+ .container{
+ 	position: relative;
+ 	.chongzhi{
+ 		color: #fff;
+ 		background-color: #E26363;
+ 		height: 45px;
+ 		text-align: center;
+ 		line-height: 45px;
+ 		font-size: 16px;
+ 		.return{position: absolute;left: 10px;top:10px; color: #fff; background: url(/images/mobile/iconfont-left.png) no-repeat;background-size: cover; display: block;width: 24px;height: 24px;}
+ 		.more{position: absolute;top: 12px; right: 12px; background: url(/images/mobile/iconfont-more.png) no-repeat;background-size: cover; display: block;width: 20px;height: 20px;}
+ 	}
+ 	.chong-change{
+ 		width: 100%;height: 40px;
+ 		border-bottom: 1px solid #A89797;
+ 		.chong-b,.chong-h{float: left;height: 100%;width: 50%;text-align: center;line-height: 40px;span{vertical-align:top; font-size: 14px; padding: 9px 10px;}}
+ 		.active{border-bottom: 2px solid red;color: #F15353;}
+ 	}
+ 	.chong-body{
+ 		font-size: 14px;
+ 		.none{display: none;}
+ 		.chong-body-h,.chong-body-b{
+ 			form{
+ 				width: 100%;text-align: center;
+ 				input{width: 79%;height: 28px;padding: 4px;border: 2px solid #CBCBCB;margin: 30px 0;}
+				button{width: 80%;height: 38px;border: none;background-color:rgb(221, 57, 57);color: #fff;font-size: 14px;font-weight: 600;}
+ 			}
+ 		}
+ 		.chong-body-h{
+ 			.chong-h-money{span{
+ 				display: inline-block; padding: 6px 12px;margin-right: 5.15%;
+ 				@include borderRadius(4px);
+ 				border:2px solid #ddd;margin-bottom: 10px;
+ 				background: -webkit-linear-gradient(#f7f7f7, #f2f2f2);
+	 				background: -o-linear-gradient(#f7f7f7, #f2f2f2);
+	 				background: linear-gradient(#f7f7f7, #f2f2f2);
+ 				}
+ 			}
+ 		}
+
+ 	}
+ 	.chong-watch{
+ 		text-align: center;
+ 		font-size: 12px;
+ 		line-height: 50px;
+ 	}
+ 	 .footer{
+ 	 	font-size: 14px;
+ 	 	background-color: #fff;
+		overflow: hidden;
+		p{ text-align: center;margin: 10px 0;}
+		a{text-decoration: none;color:rgb(102, 102, 102);}
+		ul{overflow: hidden;margin:10px 0; 
+			li{float: left; text-align: center;}
+			 
+		}
+		.dl-wrap,.khd-wrap{border-bottom:1px solid rgb(219,219,219);overflow: hidden;width: 100%;
+			div{overflow:hidden;width: 320px;margin: 5px auto; }
+		}
+		.dl{
+			ul{
+				li{width: 24%;}
+			} 
+		}
+		.khd{
+			ul {
+				li{width:49%;}
+			}
+		}
+		.borerRight{border-right: 1px solid rgb(219,219,219);}
+	}
+
+ }

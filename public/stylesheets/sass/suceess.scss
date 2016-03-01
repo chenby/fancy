@@ -1,0 +1,31 @@
+ $lightRed:rgb(192,0,0);
+@mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }
+.container{
+	width: 100%;
+	height: 500px;
+	.wrap{
+		display: inline-block;
+		overflow: hidden;
+		margin-left: 300px;
+		margin-top: 100px;
+		img{float: left;width: 50px;height: 50px;}
+		.sp{ color: rgb(67,212,144);float: left;margin-top: 20px;margin-left: 5px; }
+		.word{ 
+			float: left;
+			margin-left: 20px;
+			button{a{text-decoration: none;color: #fff;font-weight: 600;font-size: 15px; } @include borderRadius(5px); border: 0;width: 150px;height: 50px;outline: none;background-color: rgb(237,66,69);cursor: pointer;}
+			.spp{display: inline-block;font-size: 14px;color: #000; a{color: rgb(0,94,167); text-decoration: none;font-size: 14px; &:hover{text-decoration:underline;color: $lightRed }}}
+		}
+		
+	}
+	.gg{
+		margin-left: 600px;margin-top: 60px;
+	}
+	.jj{
+		margin-left: 800px
+	}
+}

@@ -1,0 +1,213 @@
+@charset "UTF-8";
+body {
+  font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+  background-color: #eeeeee;
+  color: #666666; }
+  body a {
+    text-decoration: none;
+    color: #666666; }
+
+.container {
+  position: relative;
+  width: 20rem;
+  /* //content-wrap */ }
+  .container .orange {
+    color: orange; }
+  .container .header {
+    text-align: center;
+    width: 20rem;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    font-size: 18px; }
+    .container .header a {
+      position: absolute;
+      left: 10px;
+      font-size: 30px; }
+  .container .checkOut {
+    float: left;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(/images/mobile/check.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .container .checkIn {
+    float: left;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(/images/mobile/checkIn.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .container .content-wrap {
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 70px; }
+    .container .content-wrap .body-wrap {
+      position: relative;
+      margin-bottom: 10px;
+      overflow: hidden; }
+      .container .content-wrap .body-wrap .check {
+        height: 40px;
+        background-color: #fff;
+        line-height: 40px;
+        overflow: hidden; }
+        .container .content-wrap .body-wrap .check p {
+          display: inline-block;
+          float: left;
+          font-size: 13px; }
+        .container .content-wrap .body-wrap .check > span:nth-child(1) {
+          margin: 7px 15px 0 10px; }
+        .container .content-wrap .body-wrap .check .change {
+          float: right;
+          margin-right: 15px;
+          font-size: 15px; }
+      .container .content-wrap .body-wrap .remove {
+        overflow: hidden;
+        transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        /* Firefox 4 */
+        -webkit-transition: all 0.5s;
+        /* Safari 和 Chrome */
+        -o-transition: all 0.5s;
+        /* Opera */
+        position: absolute;
+        right: 0px;
+        top: 40px;
+        height: 100%;
+        width: 60px;
+        max-height: 240px;
+        background-color: #ff5509; }
+        .container .content-wrap .body-wrap .remove div {
+          height: 2.8rem;
+          max-height: 120px; }
+        .container .content-wrap .body-wrap .remove span {
+          float: left;
+          margin-left: 14px;
+          font-size: 15px;
+          color: #fff;
+          font-weight: 400; }
+      .container .content-wrap .body-wrap .content {
+        z-index: 2;
+        transition: left 0.5s;
+        -moz-transition: left 0.5s;
+        /* Firefox 4 */
+        -webkit-transition: left 0.5s;
+        /* Safari 和 Chrome */
+        -o-transition: left 0.5s;
+        /* Opera */
+        position: relative;
+        left: 0;
+        width: 20rem;
+        max-height: 240px;
+        overflow: hidden;
+        background-color: whitesmoke; }
+        .container .content-wrap .body-wrap .content > span:nth-child(1) {
+          margin-top: 3rem;
+          margin-left: 10px; }
+        .container .content-wrap .body-wrap .content .goods-pic {
+          float: left;
+          margin: 8px 5px 8px 1rem;
+          width: 4.6rem;
+          height: 5.7rem;
+          max-width: 200px;
+          max-height: 240px;
+          background-color: #fff;
+          text-align: center; }
+          .container .content-wrap .body-wrap .content .goods-pic img {
+            margin-top: .3rem;
+            width: 90%;
+            height: 90%; }
+        .container .content-wrap .body-wrap .content .goods-more {
+          float: left;
+          margin: 8px 0; }
+          .container .content-wrap .body-wrap .content .goods-more .num-ctrl {
+            overflow: hidden;
+            margin-left: 3rem; }
+            .container .content-wrap .body-wrap .content .goods-more .num-ctrl a {
+              font-size: 28px;
+              float: left; }
+            .container .content-wrap .body-wrap .content .goods-more .num-ctrl input {
+              padding-left: 6px;
+              width: 50px;
+              border: 0;
+              text-align: center;
+              height: 30px;
+              float: left;
+              background-color: whitesmoke; }
+          .container .content-wrap .body-wrap .content .goods-more span {
+            display: block;
+            font-size: 15px; }
+          .container .content-wrap .body-wrap .content .goods-more .goodsname {
+            width: 8rem;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+          .container .content-wrap .body-wrap .content .goods-more .goodscolor {
+            margin-bottom: 2rem; }
+        .container .content-wrap .body-wrap .content .number {
+          position: absolute;
+          right: 5px;
+          bottom: 10px;
+          font-size: 15px; }
+
+.cart_none {
+  margin-top: 180px;
+  text-align: center; }
+  .cart_none img {
+    width: 65px;
+    height: 64px; }
+  .cart_none span {
+    font-size: 18px; }
+  .cart_none p {
+    margin-top: 10px; }
+    .cart_none p a {
+      color: #c00000;
+      text-decoration: underline;
+      font-size: 16px; }
+
+.footer {
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background-color: #fff;
+  width: 20rem; }
+  .footer .choose_all {
+    float: left;
+    line-height: 50px; }
+    .footer .choose_all span {
+      margin: 13px 10px 0 10px;
+      float: left; }
+    .footer .choose_all p {
+      float: left;
+      height: 100%;
+      font-size: 15px;
+      display: inline-block; }
+  .footer .add-all {
+    float: right;
+    margin-right: 15px;
+    font-size: 13px; }
+    .footer .add-all p {
+      margin-top: 6px; }
+  .footer .submit {
+    float: right;
+    width: 100px;
+    height: 100%; }
+    .footer .submit form {
+      width: 100%;
+      height: 100%; }
+    .footer .submit #submit {
+      float: left;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #ff5500;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center; }

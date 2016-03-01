@@ -1,0 +1,45 @@
+ $fontGray:rgb(153,153,153);
+  $lightBule:rgb(60,192,245);
+   $lightRed:rgb(192,0,0);
+    @mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }
+ .register{
+ 	width: 100%;
+ 	background-color:$lightBule;
+ 	overflow: hidden;
+ 	.comeback{
+ 		margin:10px 50px;
+ 		a{ text-decoration: none;color: #000;font-size: 17px;
+			&:hover{ text-decoration:underline;color:$lightRed;  }
+ 		}
+ 	}
+ 	.form_wrap{
+ 		.form{ display: inline-block;width: 725px;height: 465px;background-color: #fff; @include borderRadius(10px)}
+ 		margin-top: 20px;
+ 		text-align: center;
+ 		form{ display: inline-block;
+ 			 text-align: left;
+ 			 margin-top: 10px;
+ 			 width: 550px;
+ 			  label{float: left; margin-top:10px;}
+			div{
+			 margin-top: 30px;
+			 color: rgb(82,82,82);
+			 overflow: hidden;
+
+			 input{border: 1px solid rgb(169,169,169); float: left; outline: none;height: 30px;font-size: 15px;width: 300px; padding-left: 3px;}
+			 span{ display: none; float: left; font-size: 12px; width: 150px;height: 34px;color: red;line-height: 35px;margin-left: 5px;}
+			}
+			.fuwu{ display:block; margin: 10px 78px; p{display: inline-block;font-size: 14px;color:rgb(82,82,82); } }
+
+ 		}
+ 		margin-bottom: 100px;
+ 	}
+ 	
+ }
+  input[type=submit]{cursor:pointer; width: 240px;height: 50px;color: #fff; background-color: orange;border: none;font-size: 20px;margin-left: 65px;@include borderRadius(5px) }
+ 	input:disabled {background-color: rgb(212,207,201);}
+  .err{ border: 1px solid red !important;}

@@ -1,0 +1,40 @@
+<% include header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/chat.css">
+ <script src="/socket.io/socket.io.js"></script>
+
+<div class="chat_header">
+	<img src="/images/1445848289_209042.png">
+</div>
+<div class="chat_container">
+	<div class="chat_sm">
+	 <p>欢迎来到fancy聊天室~
+		与众多买家卖家交流一下宝贝的经验~</p>
+		 
+	</div>
+	<div class="chat_wrap">
+		<div class="chat_body">
+		<div class="sym"><span>sym：<b id='user_name'><%= user.name %></b>加入聊天 </span></div>
+		   <!--  <div class="sym"><span>sym：AS加入聊天</span></div>
+		    <div class="sym"><span>sym： +json.text+离开聊天</span></div>
+		    <div class="users">
+		        <span class="img"></span>
+		        <div class="neir">+json.text+</div>
+		        <span class="name">son.author</span>
+		        <span class="time">json.time</span>
+		    </div>
+		    <div class="users1">
+		        <span class="img1"></span>
+		        <div class="neir1">'+json.text+'</div>
+		        <span class="name1">['+js+']</span>
+		        <span class="time1">'+json.time+'</span>
+		    </div> 
+			   -->
+		</div>
+		<div class="chat_input">
+			<button class="submit_text">发送</button><input class="input" type="text" placeholder='请在此输入聊天内容'>
+		 </div>
+	</div>
+</div>
+<% include footer.ejs %>
+<script type="text/javascript" src="/javascripts/jquery-1.8.3.min.js"></script>
+ <script src="/javascripts/chat.js"></script>

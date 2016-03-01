@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fancy手机商城</title>
+	<meta name=keywords content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css-reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/mobile-index.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/swiper.min.css">
+</head>
+<body>
+	<div class="loading">
+		<div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAABhCAYAAAB1YiX8AAANf0lEQVR42u1df2TW2x9/m5mZmckkk8zMTK4kSZJJkiRJJjMzk0kyyVxJJiZXJsk1V5IkuZIkX5lrkiRJkpkkmbmSJHNdySSZvp/3t/N8O8953ud8zq/P8zx7Pu8X73+25znP+bw/533O+/cBYDAYDAaDwWAwGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwGo3awPaExQe3MDgbDjM0JLSX0XdBsQnXMFgaDRl9C/0gCU6AjzBoGoxTHCGEp0AKzh8EoxpaEvhmEBmkPs4nB+InnKQKDdIvZxGD8wC4LgUH6klATs4vBAPjLUmiQtjK7GHnHuoSWCeH4mtBt+BGnOZ/QfEIzCdUzyxh5xzghMC8T6mLWMBg05hSBeZ9QG7OFwaDRQZwyB5gtDIYeI4rAzDFLGAwz/lSE5jSzhMEwY0ERmn3MEgZDjxbCnlnPbGEw9NhOCE0Ls4XB0GMISlNkGAyGARNQGp9hMBgGXFaE5gWzhMEw444iNNeYJSsemMmBwekTCZ1LaAo4wTYqHihCc5RZsiLRkNDhhJ4CnZWOybh9zKY4UJncwywpWoiY3f0woc4qnudwQm8hvZzjc0JrNc/JcMALialvmB3/xxr40X1HzviutsI7zEB/BvY1UN/FBtAgVLdZIWxvxPP6AjNIVudpcciFZzdZVv4HjFO9Ihbcn1U0R7RZPhmEA//3GH6EENT/XSH+hvmGjR7zKOQtvk5oVV4WyBk+aVKdIzIdroL5nYLSgkG0Tc+LXf+YdCoOilPyvvTZ14IWlTH+8JiLfBo/ycsC+U166LcV3NkHq2RB9lvYBZWyb7BR42XNvB6kfLdZCNtTya5pUzaIb45qVgfhbMhFM8nLUNmSgBOKmvEIsml/2yV2UlP7qe6EPljaBZVwStw1zGk+YFx543xsKTh1yulV6MCaC9yukNCsIpheoI8J7Yj8e1el3ZASHGzB+6+DQX2ojLxqgtLQgLrDh/BrUBnvkcV3LlSYJxXFQ0dmxUCnsJ9Mi/JbZHVN3qVfEaeQi8CU0/5rEbaCaS4XAn9jwNHhcVQzjxt5ERr5hZQjGwDLDt47LM7RSL97Whn3tVADGzWesoLgnkzod83/d2TMq1ZIb944HcGO2K2Medbw2f1Ady1CWhK2U83jWhk9Qz1C9XLZ0fEFbY/kcVLH/ltRT2VCz1Kv9P0x4QSQPzOWMb/+Y+DLE7G4YwQm1SaRw5rPIT++pLyvgTwIzVn4WRLQmuHvdFka2TrDO3QHm3D4vQ9AZ0YchPK5n48Y5ucbU9FBfa5e4jMbJBUWN7IFzdxu50FoZiD72wDWiF1d1+L2V6EqdQoPF/W5K4G76hlLgUEVY6NhnAXFY1Wf0QazZJjjzsi/NymNPa6Zz0dJYI4Kle4+lDbL/ww5aCR5CX520szi7plmKO2pViDcubYR3zmp+Ty+pGfi1HDFuKXQnEgZ51xGNlcBdaBPjUHb63gG7+iNcsp2S//DmM5bRWAKUOM8BdpS60IzmeECAKBdk4UTZnuAOjXiqYaa6B+L06wXSov2Yu6sug3jOWQXOLxHnBb4nKslgVIFxqRGjtW60MxID7s78tjd4gSjFsGgxY5rcku/c5zL+RSBwcVvE2dog+xSa3oMhvZ0Ru+/SaMKfhIeRpPAFL6v3ph3tdaFRs4dip0eQt1CgKrHkOX3f0tZ6C4pH1NgjqbbjlVPbASxql11tTBjGdoJaWlDT1M0glbCwfMkT0IzqflMp6A2ocLdEYwxtXraozHmXTCS8kJdUvWvGcZxLc76TIwRWoekCxjehWzzuabBHGBeZ6ERqHGbU3kSGnz4G8IFeVacFPOSyrCsMHTIwMiXxO7j+vIHDS/0leNYtzTjfAU3d3YTxA/CrgY6I+FKxu++zaA+F04ZG6gq5Zo8CY0tofvYVHN+mNixfBoQXoR4Kfr3DB48F6Hp0IxzLuAdXAc6qNud8bs/kfKexy0FPlc5aB1AX3v+3bArT6aoRQ3CSA/dMds1apBvsdxjw3O52HKNxM76BfwrFzcBnZYyXYb3P5di59kEUNdDnKyAbqji6k9c8HvFLu4iMI+FkKVhFEqDhT4Ohlbx4tR5/B55gXxwHKcOSgN6IRWdDzXz6s14HWwGczJqh+U41Emz2fK7ncL+mUuxqSuCRmF/TEN67hBFL8Hugic8Zd4rJ1OIG3sNsUB9o+G6tA/Xm6o7IjgSCtgRaEuE4KrmdwccPXXthFppqodaK7yBaiJqVZVLH3I8UVRb5JKDl0r2AKGff1fg3LcSc/LNWtDx4HSEOfn2FNPVyGR9oVYr0LEZn9PtADEOblBdyuY3KpxBy4qAvRH2YMUFZp0w8h4QO7XtlefXPdyoBU/beaBbBbniNDG3Cc+xvkVyKOwjxhjymM96qIyLGUFlHdzzHEuXufFRrMGHhM22LHhW8TKCVUKan4HfqSLr5z53be6H+ImflMer32OcZsPzup5cA8QY5yN4Br9aeqtCUU84agpBZx/c8diQhystLJ1CP/0SKCxIMwG73H3J/omFhUBPl3zyxhKakUgLbgEqU4dyWMMH3wLElw7rC22mXyotMCfBHJzS5VhRqspiwHG5VjqCH0R8viXiyPfBRgM/XHe9UaATPV3QRngYy9GIsE7jkbwV8PtLYBfXG4QqwHbP0+SAMPimoDhZcz5gLrLtMRXp+ahKS98Cp50p/HABFRB0zU7YoHz/TpnWzBFi5w/xbrZBetb4GFRR29stlsdhv7A3MEV/VrFX0H1aSKr8EDAX2X24N8Kz7dSchiOe4x0yeAc7IggNkkv0vll5vnLsws1QnFh5N8KYfQa+TkG2lcDeR+070EfuZywXxESgvbBaUs3mI3h+2oHuI5Dm/zfhmIZPPtnJOqHZ4XnSfCvT4voD4jYFGdCYBvg826CKMaHoxePiBHK5M1OuRPS51Vn20/8V+DyNoO++8jhgXF2ps49a1BfhpJGN8XL0mtsJxW7fT4Gbm6lA8DKsAGwVu986z+/fDlStZAaG1lHcgmy6nOhqaXz6hVFpI0uOi7BbWsShC9gGagrRRc9xmsDsYkY+1HyGs8pQnwi+nI4xG2H3miOO/bnAhaUTRt90frWi9L7j9zvAL1fLF3Jx22fwS4zsAHOCZ4gwrjjIlwH5NES4CeH1H7JXp1eoiV+UHawt4Bl1SZH7PMdTm5C7Fl3VQXH/6qyLtuRS7zMe30dP7SKkp1y150Vo5OCUz0NfgrBofZ+kqsitXncrJ05IJrGug6ZvoE3Nt7oWuJCfZfyO14hF/8rjHQ8q70EXF3wAOULBA+d7zcaJAKHbr7yEg8r/1Q4yJz3nqEvW9A3mNikn4aKH+tgd4EjwwagQGhdt4ri0oT0TXrFfgE40PZcXgZFLd33T0eV4kUsO1iEojlVQnjcUQrXJoGtWcj3QRV7vA3mn5sX52IOPoDhuEjsI2CDouvitLkchk4PK8txQVVb7W2/Li9DI6SUhGQGFhW175cOYspCx5FiXFb0BSvPqcBHYtmVtBzrmE/qSB4k5uULNmJ4OFBz87lZxQr8WWsSssOlcUu8PQnHsrV6jVlfyXqOKYTDAAyTjpCJ8OrcjqkM3wL2mnOqOiarGJou5bYI4QU0VjVDcDAOdFS0e47wg5ob8sOkC0yPe4ZRQnyh7w7X0YSsUl5l/1QjcNOSkJ4AK+Yg9HriA3iuG7WrlBfcBncFgEwxrBjoxENW7tJ4FVLpRrGZ2apTdJ+/OlEOIPMW4CPa6HhaqKZ5oz8EuUdI1VWYz0Jffqo0CWyTVehZyBtl/PxM4lhq7wAj+KSEUujvuXzioI/tBX0h2OsWmWYygSumM+WVi7PpA4QslzDG76KjqrTc4TG4a1MpcXW7cpBznoXrphMfLdbUrMB1EzkvDl2zj5la9cDGDcNc1m8EmhzEagO5G6kM+XWzWgfmirXMp/FyfF6HZD3EvX60H872Q6k54OEDYh8TpYhvZblFUw78j8rED9LELLDRrdeDfrUCBWQb3AHUr/OzZTKm/Axaew+G8CM3VQP1XZ9vcNOjnuGPtgspcm90jnvG+OBXXRhx7EuLV6zzxEJZ3wvZxXbx1ho3uq9hYKahVp6N5EJgmKG3EF7PT+7BiR1zz9CytFDQQuy8K6EbPscZB33IKVVJsDH9JqIb94N8c/YJBEAcN81PtuJE8CI1asouG+t7Iv9EqbJCNkB/sFQs+Fi87xVjHhFPlLMS72WGPQWDOpjg/1M/vqvUX20p4k3qAkSc0gr6AMS2HbDdh97TUOrOojN9+Xke5gq769JOFc0XtxvOoVphSJ4y4gxJh6sq8xuDr4nWUK8xohMYmfqWGFoZqhSm2l7JWXdNpRlmgc23b9KQ+o6hmzbXCFEyHwJQOKmCFyY/T4uEnoYra6zDKht0aoZmzEII9itA01hpz0EC7LHRVjJ8cqqWdgREEXTwN8wZNyaLD4H/vKYOxooGbp+4WPMzePq45RY7Uqk3DYNgAU/5NGQiLQs3fI6nx6sW2t5mNjLwBswmw4nYZzA4jPH0o7+uvzEJGXoF2zKCwgf8Fe+/rUWYdg/Hj9MHMEfSyzYC+xwKGNuqYXQxGKdYKg79fCFIns4TBYDAYDAaDwWAwGAxGWfFfjcxm2QYnN3sAAAAASUVORK5CYII="></div>
+	</div>
+	<div class="extend">
+		<div> <img src="/images/mobile/mobile_logo.png"> <span>上fancy手机客户端，领取好礼!</span></div>
+		<div class="extend_close"><i></i></div>
+	</div>
+	<div class="container">
+		 <header class="search">
+		 	<div class="search_logo"><img src="/images/mobile/mobile_logo1.png"></div>
+		 	<div class="search_input" >
+				<div>
+					<a href="/mobile/search"><i></i><span>寻找宝贝店铺</span></a> 
+		 		</div>
+		 	</div>
+		 </header>
+		 <div class="content"><!-- //content -->
+			 <div class="lbt">	
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><a href=""><img src="/images/mobile/1.jpg"></a></div>
+						<div class="swiper-slide"><a href=""><img src="/images/mobile/2.jpg"></a></div>
+						<div class="swiper-slide"><a href=""><img src="/images/mobile/3.jpg"></a></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			 </div>
+			 <div class="banner">
+			 	<img src="/images/mobile/TB1VMqiKpXXXXctXVXXmjPp_XXX-1125-336.png">
+			 </div>
+			 <div class="nav">
+			 	<a href=""><img src="/images/mobile/56333ebbN0c7fc23b.png" alt=""><span>分类查询</span> </a> 
+			 	<a href=""><img src="/images/mobile/56333ef6Nba360270.png" alt=""><span>物流查询</span> </a> 
+			 	<a href="/mobile/shopping"><img src="/images/mobile/56333f3fN8f4bbe95.png" alt=""><span>购物车</span> </a> 
+			 	<a href="/mobile/myshop"><img src="/images/mobile/56333ed2N78cd03c9.png" alt=""><span>我的商城</span> </a> 
+			 	<a href="/mobile/chong"><img src="/images/mobile/5634bc85Na64effe9.png" alt=""><span>充值</span> </a> 
+			 	<a href=""><img src="/images/mobile/5641beaeNdbf4e2bb.png" alt=""><span>领券中心</span> </a> 
+			 	<a href="/"><img src="/images/mobile/5641b98eN7ca922ce.png" alt=""><span>超市</span> </a> 
+			 	<a href=""><img src="/images/mobile/56333ee5Nf9600169.png" alt=""><span>我的关注</span> </a> 
+			 </div>
+			 <div class="none"></div>
+			 <div class="good">
+			 	<div class="good-title">
+					<span>电视家影TOP推荐</span>
+			 	</div> 	
+			 </div>
+			 <div class="good-pic">
+			 		<a href=""><img src="/images/mobile/564463e8Nac7efba4.jpg"></a>
+			 </div>
+			  <div class="none1">猜你喜欢</div>
+			  <div class="good-disp" id="wrapper" >
+				 <ul >
+				 <% for (var i = 0; i < res.length; i++) { %>
+			  		<li>
+			  			<a href="">
+				  			<img class="load-img" src='/images/cloth/load.jpg' date-src="/images/cloth/<%= res[i].src %>.jpg" >
+				  			<div class="good-name"><%= res[i].name %></div>
+			  			</a>
+						<div>
+							<span class='good-price'>￥<b><%= res[i].price %></b></span>
+							<span><a class='orange add_shop' href="javascripte:void(0);">加入购物车</a></span>
+						</div>
+			  		</li>
+			  	<% }; %>
+			  		<!--  
+			  		<li>
+			  			<a href=""><img class="load-img" src="/images/cloth/load.jpg"><div class="good-name">徐州馆 丰县大沙河 新鲜知了猴 生金蝉知了 100只蝉蛹 知了龟 优质唐僧肉 地老鼠 包邮</div></a>
+						<div>
+							<span class='good-price'>￥<b>22.00</b></span><span><a class='orange' href="javascripte:void(0);">加入购物车</a></span>
+						</div>
+			  		</li> -->
+
+			  	</ul>
+			  	<div class="add-more">
+			  		点击加载更多
+			  	</div>
+			  	<div class="loadding">
+			  		<img src="/images/cloth/loadding.gif">
+			  	</div>
+			  </div>
+		  <div class="none"></div>
+		  <footer class='footer'>
+		  <div class="dl-wrap">
+		  	 <div class="dl">
+		  	 	<ul>
+		  	 		<li class="borerRight"><a href="/mobile/login">登录</a></li>
+		  	 		<li class="borerRight"><a href="">注册</a></li>
+		  	 		<li class="borerRight"><a href="">反馈</a></li>
+		  	 		<li><a href="#">回到顶部</a></li>
+		  	 	</ul>
+		  	 </div>
+		  </div>
+		   <div class="khd-wrap">
+		  	 <div class="khd">
+			  	 <ul>
+			  	 	<li class="borerRight"><a href="">客户端</a></li>
+			  	 	<li><a href="">触屏版</a></li>
+			  	 </ul>
+		  	 </div>
+		  	</div>
+		  	 <p>
+		  	 	Copyright © 2012-2015 fancy.com 版权所有
+		  	 </p>
+		  </footer>
+		  </div><!-- //content -->
+	</div>
+	<div class="sroll-top">
+	</div>
+	<div class="foot-user">
+		<ul>
+			<li><a href="/"><span class='first-page'></span><p>首页</p></a></li>
+			<li><a href=""><span class='wuliu'></span><p>物流</p></a></li>
+			<li><a href="/mobile/shopping"><span class='shopping-cart'></span><p>购物车</p></a></li>
+			<li><a href="/mobile/myshop"><span class='my-shop'></span><p>我的商城</p></a></li>
+			<li><a href=""><span class='more'></span><p>更多</p></a></li>
+		</ul>
+	</div>
+
+</body>
+
+<script type="text/javascript" >
+	window.onload=function(){
+		//加入购物车
+		addclickevent()
+		function addclickevent(){
+			for (var i = 0; i < $('.add_shop').length; i++) {
+				$('.add_shop')[i].ontouchend=$('.add_shop')[i].onclick=function(){
+					var sp = $(this).parents('span').parents('div').prev('a').children('div').html();
+					var price_str= $(this).parents('span').prev('span').children('b').html();
+					console.log(sp);
+					$.post('add_to_cart',{sp:sp,price:price_str},function(){
+						alert('加入购物车成功');
+					})	
+				}
+			};
+		}
+		
+		//loading页面start
+		document.getElementsByClassName('loading')[0].style.display='none';
+		document.getElementsByClassName('extend_close')[0].ontouchend=document.getElementsByClassName('extend_close')[0].onclick=function(event){
+		document.getElementsByClassName('extend')[0].style.display='none';
+		}
+		//loading页面end
+		//下拉更新
+		var base=0;
+		 $('.add-more')[0].ontouchend=$('.add-more')[0].onclick=function(){
+		 	$(this).hide();
+		 	$('.loadding').show();
+		 	base+=8;
+		 	$.post('../goods_getten',{base:base},function(data){
+		 		var data =JSON.parse(data);	
+		 		 if (data.length) { 		 	
+			 		$('.loadding').hide();
+			 		$('.add-more').show();
+			 		for (var i = 0; i < data.length; i++) {		  			 
+			 			 $('#wrapper ul').append('<li><a href=""><img class="load-img" src="/images/cloth/load.jpg" date-src="/images/cloth/'+data[i].src+'.jpg" ><div class="good-name">'+data[i].name+'</div></a><div><span class="good-price">￥<b>'+data[i].price+'</b></span><span><a class="orange add_shop" href="javascripte:void(0);">加入购物车</a></span></div></li>');
+			 		};
+			 		load();
+			 		addclickevent();
+		 		 }else{
+		 		 	$('.loadding').hide();
+		 		 	$('.add-more').show();
+		 		 	$('.add-more').text('已经没有更多了')
+		 		 }
+		 				 		
+		 	})
+
+		 }
+		//下拉更新
+		//返回顶部display
+		window.onscroll=function(){
+			if (document.body.scrollTop>=440||document.documentElement.scrollTop>=440) {
+				document.getElementsByClassName('sroll-top')[0].style.display='block';
+			}else{
+				document.getElementsByClassName('sroll-top')[0].style.display='none';
+			}
+		}//返回顶部display none
+		srcollTop('sroll-top');//返回顶部
+		//返回顶部function
+		function srcollTop(class_name){
+			var timer=null;
+			document.getElementsByClassName(class_name)[0].ontouchend=document.getElementsByClassName(class_name)[0].onclick=function(event){
+				clearInterval(timer);
+				 timer=setInterval(function(){
+					if(document.documentElement.scrollTop>0||document.body.scrollTop>0) {
+						document.documentElement.scrollTop-=100;
+	 				 	document.body.scrollTop-=100;
+					}else{
+						console.log('message');
+						clearInterval(timer);
+					}
+				},20);	
+			}
+		}
+		//返回顶部end
+		
+	 	load( )
+		function load(){
+			var imgSrc=[]
+			var nowImg=$('.load-img[src="/images/cloth/load.jpg"]')
+			for (var i = 0; i < nowImg.length; i++) {
+				imgSrc.push(nowImg[i].getAttribute('date-src'))
+			};		
+			preloadimages(imgSrc).done(function(newimages){
+				 for (var i = 0; i < newimages.length; i++) {
+				 	nowImg[i].src=newimages[i].src;
+				 };
+			})
+		}
+		//图片预加载function
+		function preloadimages(arr){   
+			var newimages=[], loadedimages=0;
+			var postaction=function(){};
+			var arr=(typeof arr!="object")? [arr] : arr;
+			function imageloadpost(){
+			    loadedimages++
+			    if (loadedimages==arr.length){
+			        postaction(newimages) //加载完成用我们调用postaction函数并将newimages数组做为参数传递进去
+			    }
+			}
+			for (var i=0; i<arr.length; i++){
+			    newimages[i]=new Image()
+			    newimages[i].src=arr[i]
+			    newimages[i].onload=function(){
+			        imageloadpost()
+			    }
+			    newimages[i].onerror=function(){
+			        imageloadpost()
+			    }
+			}
+			return { //此处返回一个空白对象的done方法
+			    done:function(f){
+			        postaction=f || postaction
+			    }
+			}
+		}//图片预加载function
+		
+	}
+</script>
+<script type="text/javascript" src="/javascripts/rem-init.js"></script>
+<script type="text/javascript" src="/javascripts/zepto.min.js"></script>
+<script type="text/javascript" src="/javascripts/swiper.3.2.0.jquery.min.js"></script>
+<script type="text/javascript">
+ var mySwiper = new Swiper('.swiper-container',{
+    loop: true,
+	autoplay: 3000,
+	pagination: '.swiper-pagination'
+  });
+</script>
+
+</html>

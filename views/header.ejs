@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>the fanc shop</title>
+	<meta name=keywords content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="images/logo.png">
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css-reset.css">
+    <script type="text/javascript" src="/javascripts/react.min.js"></script>
+     <script type="text/javascript" src="/javascripts/browser.min.js"></script>
+ </head>
+  <body>
+	 <div class="container">
+	 	<div class="navright">
+	 		<div class="none"></div>
+	 		<div class="one">
+	 			<a href="/chat"><i class='icon-lightbulb icon-large icon'></i></a> 
+	 		</div>
+	 		<div class="two"> 活动 </div>
+	 		<div class="null"> </div>
+	 		<div class="cart">
+	 			<a href="/shoppingCart"><i class='icon-shopping-cart' style='color:red;'></i><span>购物车</span></a>
+	 		</div>
+	 		<div class="save">
+	 			<a href="/favourite"><i class='icon-star-empty' ></i></a> 
+	 		</div>
+	 		<div class="chongzhi">
+	 			<a href="/voucher"><i class=" icon-strikethrough"></i></a>
+	 		</div>
+	 		<div class="fankui">
+	 			<i class="icon-pencil"></i>
+	 		</div>
+	 		<div class="u">
+	 			<a href="#">Top</a>
+	 		</div>
+	 	</div>
+	 	<div class="header"><!-- header -->
+		 	<div class="header-wrap">
+		 		<div class="header-left">
+		 			<p>hi！ This is饭太稀商场~</p>
+		 			 <% if(user){  %>
+		 			<p><%= user.name %>,您的资金余额：￥<b class='orange your_money'><%= user.money %></b></p>
+		 			<% } %>
+		 		</div>
+		 		<div class="header-right">
+		 			<ul>
+		 				
+		 				<% if(!user){  %>
+		 				<li> <a href="/login">登录</a></li>
+		 				<li style='margin-right:7px;'> <a href="/register">注册</a></li>
+		 				<% }else{ %>
+	   					<li><a href="/logout">登出</a></li>
+	   					<% } %>
+	   					<li><a href="/">首页</a> </li>
+		 				<li style='margin-right:7px;'>|</li>
+		 				<li> <a href="/shoppingCart"><i class=' icon-shopping-cart' style='color:red;margin-right:3px;'></i>购物车<% if(user){  %><b class='orange'><%= user.cartNum %></b>件</a><% } %>
+		 				</li>
+		 				<li style='margin-right:7px;'> <a href="/favourite"><i class='icon-calendar'style='color:gray;margin-right:3px;'></i>收藏夹</a></li>
+		 				<li style='margin-right:7px;'>|</li>
+		 				<li> <a href=""><i class='icon-mobile-phone' style='color:#000;margin-right:3px;'></i>手机fanc </a></li>
+		 				<li> <a href="">客户服务~</a></li>
+		 			</ul>
+		 			
+		 		</div>
+		 	</div>
+	 	</div>

@@ -1,0 +1,70 @@
+<% include header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/favourite.css">
+<div class="fav_header">
+	<div class="fav_header_left">
+			<div> <img src="/images/1445819761_915641.png"> </div>
+		</div>
+		<div class="fav_header_right">
+			<form>
+	 			<input type="search" placeholder='双十一拍卖赶紧抢！'/><button>搜索</button>
+	 		</form>
+		</div>
+</div>
+
+<% if(result&&result.length!=0){ %>
+<div class="fav_leader">
+	<div class="border orange">全部商品</div>
+	<div>失效</div>
+	<div><input type="search" placeholder='宝贝搜索'><span><i class='icon-search'></i></span></div>
+</div>
+<div class="sp_container">
+
+	<% for (var i = 0; i < result.length; i++) { %>
+	<div class="sp_wrap" id="all<%= i %>">
+		<img src="/images/T1SJioFuldXXXXXXXX_!!0-item_pic.jpg_160x160xz.jpg">
+		<p class="sp_name" ><i class=' icon-gift'> </i> <b id="name<%= i %>"><%= result[i].sp %></b></p>
+		<p class="sp_price">￥<b><%= result[i].price %></b></p>
+		<a class="remove" href="javascript:void(0)" data-num='<%= i %>' >删除订单</a>
+	</div>
+	<% }; %>
+
+</div>
+<% }else{ %>
+<div class="cart_none">
+	<img src="/images/osd_folder_favorites_72px_500691_easyicon.net.png">
+	<div>
+		<span>收藏夹空空的哦~，去看看心仪的商品吧~</span>
+		<p><a href="/">去购物>></a></p>
+	</div>
+</div>
+<% } %>
+<div class="cart_none" style="display:none">
+	<img src="/images/osd_folder_favorites_72px_500691_easyicon.net.png">
+	<div>
+		<span>收藏夹空空的哦~，去看看心仪的商品吧~</span>
+		<p><a href="/">去购物>></a></p>
+	</div>
+</div>
+<% include footer.ejs %>
+ <script type="text/javascript">
+ $(function(){
+ 	$('.remove').click(function(){
+ 		var num = $(this).attr('data-num');
+ 		var remove_name = $('#name'+num).html();
+ 		$.post('fav_remove',{remove_name:remove_name},function(data){
+				console.log('remove succss');
+			});
+ 		$('#all'+num).remove();
+ 		if ($('.sp_wrap').text()=='') {
+ 			$('.cart_none').show();
+ 			$('.fav_leader').hide();
+ 			$('.sp_container').hide();
+
+ 		}else{
+ 			$('.fav_leader').show()
+ 			$('.sp_container').show();
+ 		}
+ 	});
+
+ })
+ </script>

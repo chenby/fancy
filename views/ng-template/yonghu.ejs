@@ -1,0 +1,24 @@
+<div class="common-container">
+	<div class="common-nav"><span>您现在的位置 >></span><a href="#yonghu">&nbsp;会员用户管理</a></div>
+	<table class="com-table" ng-controller="user.list">
+	 <tr class="tHead"> 
+	 	<td>用户名</td>
+	 	<td>性别</td> 
+	 	<td>手机号</td> 
+	 	<td>邮箱</td> 
+	 	<td>金币</td>
+	 	<td>购物车</td>
+	 	<td>操作</td>
+	 </tr> 
+	 <tr ng-repeat="showdata in showdata">
+	 	<td>{{ showdata.name }}</td> 
+	 	<td>男</td> 
+	 	<td>1363423423434</td> 
+	 	<td>xiaoming@qq.com</td> 
+	 	<td>{{ showdata.money }}</td>
+	 	<td>{{ showdata.cartNum }}</td>  
+	 	<td><i class='icon-remove'></i><dela>删除</dela></td> 
+	 </tr> 
+	</table>
+
+</div>

@@ -1,0 +1,38 @@
+<% include header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/voucher.css">
+<div class="voucher_header">
+	<img src="/images/1445822163_505343.png">
+	<div>您当前的位置:<a href="/voucher">账户充值</a>>充值</div>
+</div>
+<div class="voucher_container">
+	<div class="voucher_left">
+		<div class="left_1"> <i class='icon-strikethrough'></i>商城币充值</div>
+		<div class="left_2">
+			<p>商城币可以用来购买商城所有商品、服务及虚拟物品；</p>
+			<p>1元=1商城币 </p>
+		 </div>
+		 <div class="left_3">
+		 	<input type="checkbox"><span>同意商城币服务条款</span>
+		 </div>
+		 <div class="left_4"><a href="">客服帮助</a> </div>
+	</div>
+	<div class="voucher_right">
+		<div class="voucher_wraps">
+		<form method="post">
+			<div><label for="number">充值数量:</label><input onkeyup="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';return false;}" type="text" value="50" name="got_money"><span>商城币</span> </div>
+			<div> <label for="money">应付金额:￥</label><span class='orange money'>50.00</span> </div>
+			<div><button>确认支持</button> </div>
+			</form>
+		</div>
+	</div>
+</div>
+<% include footer.ejs %>
+<script>
+ $(function(){
+ 	 $('input[name=got_money]').keyup(function(){
+ 	 	$('.money').text( $('input[name=got_money]').val() )
+ 	 })
+ 	  
+ 	
+ })
+</script>

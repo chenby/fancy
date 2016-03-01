@@ -1,0 +1,95 @@
+@charset "UTF-8";
+html, body {
+  height: 100%; }
+
+.container {
+  background-image: url(/images/136126007656.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 1183px;
+  min-height: 666px; }
+  .container .alog_header img {
+    margin-left: 350px;
+    margin-top: 80px; }
+  .container .alog_form .form_wrap {
+    -moz-border-radius: 10px;
+    /* Firefox */
+    -webkit-border-radius: 10px;
+    /* Safari 和 Chrome */
+    border-radius: 10px;
+    /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+    width: 650px;
+    height: 340px;
+    margin: 50px 320px;
+    background-color: rgba(222, 222, 222, 0.7); }
+    .container .alog_form .form_wrap form span {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 250px;
+      display: inline-block; }
+    .container .alog_form .form_wrap form .admname, .container .alog_form .form_wrap form .password {
+      margin-left: 100px;
+      margin-top: 20px;
+      height: 40px;
+      overflow: hidden; }
+      .container .alog_form .form_wrap form .admname input, .container .alog_form .form_wrap form .password input {
+        background-color: #fff;
+        float: left;
+        width: 300px;
+        padding: 4px;
+        outline: none;
+        border: 1px solid #37b44a;
+        height: 28px; }
+      .container .alog_form .form_wrap form .admname label, .container .alog_form .form_wrap form .password label {
+        overflow: hidden;
+        text-align: center; }
+        .container .alog_form .form_wrap form .admname label i, .container .alog_form .form_wrap form .password label i {
+          line-height: 38px;
+          display: inline-block;
+          width: 38px;
+          height: 38px;
+          float: left; }
+    .container .alog_form .form_wrap form .check {
+      margin-left: 140px;
+      margin-top: 20px;
+      overflow: hidden; }
+      .container .alog_form .form_wrap form .check input {
+        background-color: #fff;
+        float: left;
+        width: 50px;
+        height: 28px;
+        padding: 4px;
+        outline: none;
+        border: 1px solid #37b44a;
+        margin-right: 10px; }
+      .container .alog_form .form_wrap form .check img {
+        float: left;
+        width: auto;
+        height: 38px; }
+    .container .alog_form .form_wrap button, .container .alog_form .form_wrap .reset {
+      cursor: pointer;
+      margin-top: 20px;
+      outline: none;
+      border: 0px;
+      height: 38px;
+      width: 100px;
+      background-color: #4d9eef;
+      color: #fff;
+      -moz-border-radius: 5px;
+      /* Firefox */
+      -webkit-border-radius: 5px;
+      /* Safari 和 Chrome */
+      border-radius: 5px;
+      /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */ }
+    .container .alog_form .form_wrap .login {
+      margin-left: 140px; }
+    .container .alog_form .form_wrap .reset {
+      margin-left: 40px; }
+    .container .alog_form .form_wrap .reset:active, .container .alog_form .form_wrap .login:active {
+      background-color: #1967be; }
+  .container .alog_footer {
+    margin-left: 500px;
+    font-size: 14px; }

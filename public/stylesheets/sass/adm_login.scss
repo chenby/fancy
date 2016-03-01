@@ -1,0 +1,50 @@
+@mixin borderRadius($radius){
+ 	 -moz-border-radius:$radius; /* Firefox */
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+ }
+html,body{height: 100%;}
+.container{
+	background-image: url(/images/136126007656.jpg);
+	background-repeat: no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+	min-width: 1183px;
+	min-height: 666px;
+	.alog_header{
+
+		img{margin-left: 350px;margin-top: 80px;}
+	}
+	.alog_form{
+		.form_wrap{
+			@include borderRadius(10px);
+			width: 650px;
+			height: 340px;
+			margin:50px 320px;
+			background-color: rgba(222,222,222,0.7);
+			form{
+				span{font-size: 16px;font-weight: 600;margin:20px 250px;display: inline-block; }
+				.admname,.password{
+				 margin-left: 100px;margin-top: 20px;height: 40px;overflow: hidden;
+				 input{background-color: #fff; float: left; width: 300px;padding:4px;outline: none;border: 1px solid #37b44a; height: 28px;} 
+				 label{ overflow: hidden;text-align: center; i{ line-height: 38px; display: inline-block;width: 38px;height: 38px;float: left;} } 
+				}
+				.check{ 
+					margin-left: 140px;margin-top: 20px;overflow: hidden;
+					input{ background-color: #fff;float: left; width: 50px;height: 28px;padding:4px;outline: none;border: 1px solid #37b44a;margin-right: 10px; }
+					img{float: left; width: auto;height: 38px;}
+				}
+				
+			}
+			button,.reset{cursor:pointer; margin-top: 20px; outline: none;border: 0px;height: 38px;width: 100px;background-color: rgb(77,158,239); color: #fff;@include borderRadius(5px);}
+				.login{margin-left: 140px;}
+				.reset{margin-left: 40px;}
+				.reset:active,.login:active{ background-color: rgb(25,103,190);} 
+		}
+	}
+	.alog_footer{
+		margin-left: 500px;font-size: 14px;
+	}
+}

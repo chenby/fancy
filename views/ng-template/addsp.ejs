@@ -1,0 +1,87 @@
+<style type="text/css">
+	.showcase-form textarea .ng-dirty.ng-invalid,
+	/*.showcase-form select .ng-dirty.ng-invalid,*/
+	.showcase-form input.ng-dirty.ng-invalid {
+	    border-color: #e9322d;
+	    -webkit-box-shadow: 0 0 6px #f8b9b7;
+	    -moz-box-shadow: 0 0 6px #f8b9b7;
+	    box-shadow: 0 0 6px #f8b9b7;
+	}
+	.error{ float: left; background-color: #E47C5D;width: 300px; margin-left: 50px;
+border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;overflow: hidden;
+	 }
+	 .error ul{  }
+	 .error ul li{ display: block;height: 38px;font-size: 14px;line-height:38px;padding-left: 30px; }
+	.showcase-form{ margin-left: 200px; font-family: arial, "微软雅黑";}
+	.showcase-form input{outline: none;width: 450px;height: 25px;padding: 4px;
+					border-radius: 4px;-webkit-border-radius: 4px;-moz-border-radius: 4px;
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+					box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);border: 1px solid #cccccc;background-color: #fff;}
+	.showcase-form label{ float: left; font-size: 16px;font-weight: 400;margin-bottom: 5px;margin-top: 10px; display: inline-block;  }
+	.input-container{overflow: hidden;margin-bottom: 20px;}
+	.input-wrap{float: left;margin-left: 25px;}		
+	#file{	width: 300px;
+			display: inline-block;
+		    background: #D0EEFF;
+		    border: 1px solid #99D3F5;
+		    border-radius: 4px;-webkit-border-radius: 4px;-moz-border-radius: 4px; 
+		    padding: 4px 12px;
+		    overflow: hidden;
+		    color: #1E88C7;
+		    text-decoration: none;
+		    text-indent: 0;
+		    line-height: 20px;}
+	.btn-submit{float: left;}
+	.btn-submit button{ border: 0;width: 100px;border-radius: 4px;-webkit-border-radius: 4px;-moz-border-radius: 4px; font-weight: 600; height: 37px;cursor:pointer;background-color:rgb(192,0,0);color: #fff;font-size: 15px;}
+		.btn-submit button:disabled{background-color: #d4cfc9; }
+</style>
+<div class="common-container">
+<div class="common-nav"><span>您现在的位置 >></span><a href="#addsp">&nbsp;添加商品页</a></div>
+<form method="post" class="showcase-form" ng-controller="ctrl.form" name="basic_form" novalidate="">
+	<div  class='input-container'>
+		<label>商品名称:</label>	
+		<div class="input-wrap">
+			<input type="text" ng-model="vm.sp.name" required="" name="sp_name">
+		</div>
+	</div>
+	<div class='input-container'>
+		<label>商品价格:</label>
+		<div class="input-wrap">
+			<input type="number" name="sp_price" ng-model="vm.sp.price" ng-pattern="/[0-9]*$/"  required >
+		</div>
+	</div>
+	<div class='input-container'>
+		<label>商品产地:</label>
+		<div class="input-wrap">
+			<input type="text" name="sp_place" ng-model='vm.sp.place'  required="">
+		</div>
+	</div>
+	<div class='input-container'>
+		<label>商品保质期:</label>
+		<div class="input-wrap" style="margin-left:10px">
+			<input type="number" name="sp_data" ng-model='vm.sp.data' required  ng-pattern="/[0-9]*$/"  >
+		</div>
+	</div>
+	<div class='input-container'>
+		<label>商品图片:</label>
+		<div class="input-wrap" class="file-input">
+			<input id="file" type="file">
+		</div>
+	</div> 
+	<div class="btn-submit">
+		<button type="submit" ng-click="vm.submit(basic_form)" ng-disabled="basic_form.$invalid">提交</button>
+	</div>
+	<div class="error"  ng-show="basic_form.$invalid &&basic_form.$dirty" > 
+		<ul>
+			<li ng-show="basic_form.sp_name.$dirty&& basic_form.sp_name.$error.required"> 商品名称不能为空！</li>
+			<li ng-show="basic_form.sp_price.$dirty&& basic_form.sp_price.$error.required"> 商品价格不能为空！</li>
+			<li ng-show="basic_form.sp_place.$dirty&& basic_form.sp_place.$error.required"> 商品产地不能为空！</li>
+			<li ng-show="basic_form.sp_data.$dirty&& basic_form.sp_data.$error.required"> 商品保质期不能为空！</li>
+			<li ng-show="basic_form.sp_price.$dirty&& basic_form.sp_price.$error.pattern"> 商品价格格式不正确！</li>
+			<li ng-show="basic_form.sp_data.$dirty&& basic_form.sp_data.$error.pattern"> 商品保质期格式不正确！</li>
+			 
+		</ul>
+	</div>
+	
+</form>
+</div>

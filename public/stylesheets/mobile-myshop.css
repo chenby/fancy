@@ -1,0 +1,197 @@
+@charset "UTF-8";
+body {
+  font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+  background-color: #eeeeee; }
+  body a {
+    text-decoration: none;
+    color: #666666; }
+
+.container .color {
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 305px; }
+  .container .color a {
+    color: #000;
+    margin-left: 10px;
+    text-decoration: underline; }
+
+.container .red {
+  background-color: #D39393; }
+  .container .red b {
+    font-size: 12px;
+    margin-left: 34px; }
+
+.container .orange {
+  background-color: #abb554; }
+
+.container .green {
+  background-color: #2FF22F; }
+
+.container .blue {
+  background-color: #8f8fe7; }
+
+.container .user {
+  position: absolute;
+  right: 5px;
+  top: 46px;
+  overflow: hidden; }
+  .container .user div {
+    float: left;
+    overflow: hidden;
+    -moz-border-radius: 50%;
+    /* Firefox */
+    -webkit-border-radius: 50%;
+    /* Safari 和 Chrome */
+    border-radius: 50%;
+    /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */ }
+
+.container .user-header {
+  overflow: hidden;
+  height: 45px;
+  font-size: 15px;
+  min-width: 305px;
+  background-color: #cf5757; }
+  .container .user-header ul {
+    overflow: hidden;
+    line-height: 45px; }
+    .container .user-header ul li {
+      float: left;
+      margin-left: 1rem; }
+      .container .user-header ul li a {
+        color: #fff;
+        font-weight: 300; }
+
+.container .user-nav {
+  height: 70px;
+  background-color: #fff;
+  min-width: 305px;
+  margin-top: 20px;
+  border-bottom: 1px solid #dbdbdb; }
+  .container .user-nav ul li {
+    text-align: center;
+    float: left;
+    width: 20%; }
+    .container .user-nav ul li a {
+      font-size: 14px;
+      display: block;
+      overflow: hidden; }
+    .container .user-nav ul li span {
+      margin-top: 10px;
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      vertical-align: top; }
+    .container .user-nav ul li p {
+      vertical-align: top;
+      margin-top: 2px; }
+
+.container .user-all {
+  font-size: 12px;
+  color: #999;
+  overflow: hidden;
+  min-width: 305px;
+  min-height: 360px; }
+  .container .user-all .commen-all {
+    overflow: hidden;
+    background-color: #fff;
+    line-height: 45px;
+    height: 45px;
+    border-bottom: 1px solid #C0BEBE; }
+    .container .user-all .commen-all a {
+      display: block;
+      width: 100%;
+      height: 100%; }
+    .container .user-all .commen-all .all-icon {
+      width: 32px;
+      height: 100%;
+      margin: 8px 0px 0 10px;
+      float: left; }
+      .container .user-all .commen-all .all-icon span {
+        display: inline-block;
+        width: 32px;
+        height: 32px; }
+    .container .user-all .commen-all p {
+      float: right; }
+    .container .user-all .commen-all .all-word {
+      float: left;
+      margin-left: 4px; }
+    .container .user-all .commen-all .all-gt {
+      width: 32px;
+      float: right;
+      margin: 4px 5px 10px 5px; }
+      .container .user-all .commen-all .all-gt b {
+        display: inline-block;
+        background: url(/images/mobile/sprite.png) -381px 0px no-repeat;
+        width: 16px;
+        height: 16px; }
+
+.container .nav1 {
+  background: url(/images/mobile/sprite.png) -96px 0px no-repeat; }
+
+.container .nav2 {
+  background: url(/images/mobile/sprite.png) -64px 0px no-repeat; }
+
+.container .nav3 {
+  background: url(/images/mobile/sprite.png) -192px 0px no-repeat; }
+
+.container .nav4 {
+  background: url(/images/mobile/sprite.png) -128px 0px no-repeat; }
+
+.container .nav5 {
+  background: url(/images/mobile/sprite.png) -32px 0px no-repeat; }
+
+.container .icon1 {
+  background: url(/images/mobile/sprite.png) no-repeat; }
+
+.container .icon2 {
+  background: url(/images/mobile/sprite.png) -288px 0px no-repeat; }
+
+.container .icon3 {
+  background: url(/images/mobile/sprite.png) -256px 0px no-repeat; }
+
+.container .icon4 {
+  background: url(/images/mobile/sprite.png) -350px 0px no-repeat; }
+
+.container .icon5 {
+  background: url(/images/mobile/sprite.png) -224px 0px no-repeat; }
+
+.container .icon6 {
+  background: url(/images/mobile/sprite.png) -160px 0px no-repeat; }
+
+.container .icon7 {
+  background: url(/images/mobile/sprite.png) -320px 0px no-repeat; }
+
+.container .footer {
+  margin-top: 20px;
+  background-color: #fff;
+  font-size: 14px;
+  overflow: hidden;
+  margin-bottom: 40px; }
+  .container .footer p {
+    text-align: center;
+    margin: 10px 0; }
+  .container .footer a {
+    text-decoration: none;
+    color: #666666; }
+  .container .footer ul {
+    overflow: hidden;
+    margin: 10px 0; }
+    .container .footer ul li {
+      float: left;
+      text-align: center; }
+  .container .footer .dl-wrap, .container .footer .khd-wrap {
+    border-bottom: 1px solid #dbdbdb;
+    overflow: hidden;
+    width: 100%; }
+    .container .footer .dl-wrap div, .container .footer .khd-wrap div {
+      overflow: hidden;
+      width: 320px;
+      margin: 5px auto; }
+  .container .footer .dl ul li {
+    width: 24%; }
+  .container .footer .khd ul li {
+    width: 49%; }
+  .container .footer .borerRight {
+    border-right: 1px solid #dbdbdb; }

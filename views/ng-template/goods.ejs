@@ -1,0 +1,47 @@
+<style type="text/css">
+	.change{margin-top: 30px;overflow: hidden;width: 100%;text-align: center;font-size: 13px;color: rgb(186, 87, 91);}
+		.change ul li,.change p{float: left;padding: 4px 5px; 
+			border:1px solid rgb(6, 157, 250);
+			margin-left: 5px;cursor:pointer; 
+			 -moz-border-radius:3px; 
+			  -webkit-border-radius: 3px;
+			  border-radius: 3px; 
+			  background: -webkit-gradient(linear,0 0,0 100%,color-stop(0,#BCDEFA),color-stop(1,#E58AB7));
+		}
+		.change a{font-size: 13px!important; color:rgb(186, 87, 91)!important;display: block;width: 100%;height: 100%;}
+		.change{padding-left: 300px;}
+</style>
+<div class="common-container" ng-controller="goods.list">
+	<div class="common-nav"><span>您现在的位置 >></span><a href="#goods">&nbsp;商品列表管理</a></div>
+	<table class="com-table" >
+	 <tr class="tHead"> 
+	 	<td>商品名</td>
+	 	<td>钱数</td> 
+	 	<td>赞</td> 
+	 	<td>是否可用</td>
+	 	<td>操作</td>
+	 </tr> 
+	 <tr ng-repeat="showdata in showdata">
+	 	<td>{{ showdata.name }}</td> 
+	 	<td>{{ showdata.price }}</td> 
+	 	<td>120</td> 
+	 	<td>yes</td> 
+	 	<td><i class='icon-remove'></i><delate>删除</delate></td> 
+	 </tr>
+	 <tr> 
+	 	<td>aaaa</td> 
+	 	<td>310</td> 
+	 	<td>120</td> 
+	 	<td>yes</td> 
+	 	<td><i class='icon-remove'></i><delate>删除</delate></td> 
+	 </tr> 
+	</table>
+	<div class="change" ng-controller="goods.fen">
+		<p ng-click="next(-1)">上一页</p>
+		<ul ng-repeat="pageDate in pageDate"> 
+			<li ng-click="asfor(pageDate.index)"><a href="" index="{{ pageDate.index}}" ></a>{{$index+1}}</li>
+		</ul>
+		<p ng-click="next(1)">下一页</p>
+		<span>第{{ page }}页</span>
+	</div>
+</div>

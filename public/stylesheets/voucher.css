@@ -1,0 +1,89 @@
+@charset "UTF-8";
+.voucher_header {
+  height: 50px;
+  overflow: hidden; }
+  .voucher_header img {
+    float: left;
+    margin-left: 100px; }
+  .voucher_header div {
+    float: right;
+    margin-right: 300px;
+    margin-top: 21px;
+    color: #95c095;
+    font-size: 14px; }
+    .voucher_header div a {
+      text-decoration: none;
+      color: #3cc0f5; }
+      .voucher_header div a:hover {
+        text-transform: underline; }
+
+.voucher_container {
+  margin: 20px 200px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5; }
+
+.voucher_left {
+  float: left;
+  background-color: #f6f6f6;
+  width: 25%;
+  border-right: 1px solid #e5e5e5; }
+  .voucher_left .left_1 {
+    margin: 50px 45px 20px 20px;
+    padding-bottom: 20px;
+    font-size: 26px;
+    color: #c00000;
+    border-bottom: 1px solid #e3e3e3; }
+  .voucher_left .left_2 {
+    margin-left: 20px;
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 100px; }
+    .voucher_left .left_2 p {
+      margin-top: 10px; }
+  .voucher_left .left_3 {
+    margin: 0 55px 30px 20px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #e3e3e3; }
+  .voucher_left .left_4 {
+    margin-left: 20px;
+    margin-bottom: 100px;
+    font-size: 14px; }
+    .voucher_left .left_4 a {
+      text-decoration: none;
+      color: #c00000; }
+      .voucher_left .left_4 a:hover {
+        text-decoration: underline;
+        color: #3cc0f5; }
+
+.voucher_right {
+  float: left;
+  width: 73%; }
+  .voucher_right .voucher_wraps {
+    margin: 20px 40px; }
+  .voucher_right div {
+    margin-top: 20px; }
+  .voucher_right div:nth-child(1) input {
+    width: 70px;
+    height: 30px;
+    border: 1px solid #d4d4d4;
+    font-size: 16px;
+    padding-left: 10px;
+    margin: 0 5px; }
+  .voucher_right div:nth-child(3) button {
+    border: none;
+    background-color: #1573ab;
+    width: 95px;
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    -moz-border-radius: 5px;
+    /* Firefox */
+    -webkit-border-radius: 5px;
+    /* Safari 和 Chrome */
+    border-radius: 5px;
+    /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+    cursor: pointer; }
+
+.orange {
+  color: orange; }

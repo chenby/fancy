@@ -1,0 +1,87 @@
+@charset "UTF-8";
+.register {
+  width: 100%;
+  background-color: #3cc0f5;
+  overflow: hidden; }
+  .register .comeback {
+    margin: 10px 50px; }
+    .register .comeback a {
+      text-decoration: none;
+      color: #000;
+      font-size: 17px; }
+      .register .comeback a:hover {
+        text-decoration: underline;
+        color: #c00000; }
+  .register .form_wrap {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 100px; }
+    .register .form_wrap .form {
+      display: inline-block;
+      width: 725px;
+      height: 465px;
+      background-color: #fff;
+      -moz-border-radius: 10px;
+      /* Firefox */
+      -webkit-border-radius: 10px;
+      /* Safari 和 Chrome */
+      border-radius: 10px;
+      /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */ }
+    .register .form_wrap form {
+      display: inline-block;
+      text-align: left;
+      margin-top: 10px;
+      width: 550px; }
+      .register .form_wrap form label {
+        float: left;
+        margin-top: 10px; }
+      .register .form_wrap form div {
+        margin-top: 30px;
+        color: #525252;
+        overflow: hidden; }
+        .register .form_wrap form div input {
+          border: 1px solid darkgray;
+          float: left;
+          outline: none;
+          height: 30px;
+          font-size: 15px;
+          width: 300px;
+          padding-left: 3px; }
+        .register .form_wrap form div span {
+          display: none;
+          float: left;
+          font-size: 12px;
+          width: 150px;
+          height: 34px;
+          color: red;
+          line-height: 35px;
+          margin-left: 5px; }
+      .register .form_wrap form .fuwu {
+        display: block;
+        margin: 10px 78px; }
+        .register .form_wrap form .fuwu p {
+          display: inline-block;
+          font-size: 14px;
+          color: #525252; }
+
+input[type=submit] {
+  cursor: pointer;
+  width: 240px;
+  height: 50px;
+  color: #fff;
+  background-color: orange;
+  border: none;
+  font-size: 20px;
+  margin-left: 65px;
+  -moz-border-radius: 5px;
+  /* Firefox */
+  -webkit-border-radius: 5px;
+  /* Safari 和 Chrome */
+  border-radius: 5px;
+  /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */ }
+
+input:disabled {
+  background-color: #d4cfc9; }
+
+.err {
+  border: 1px solid red !important; }

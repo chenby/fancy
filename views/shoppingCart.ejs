@@ -1,0 +1,201 @@
+<% include header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/shoppingCart.css">
+<div class="shoppingCart">
+	<div class="cart_header">
+		<div class="cart_header_left">
+			<div> <img src="/images/gowuche.png"> </div>
+		</div>
+		<div class="cart_header_right">
+			<form>
+	 			<input type="search" placeholder='双十一拍卖赶紧抢！'/><button>搜索</button>
+	 		</form>
+		</div>
+	</div>
+	<% if(result&&result!=''){ %>
+	<div class="cartContainer" >
+		<div class="all"><img src="/images/1445759372_125996.png"></div>
+		<div class="header_bar">
+			<div class="quanxuan"> <input type="checkbox" name="all"><span>全选</span> </div>
+			<div style="width:370px;">商品</div>
+			<div style="width:160px;">单价(元)</div>
+			<div style="width:80px;">数量</div>
+			<div style="width:140px;">小计(元)</div>
+			<div style="width:75px;">操作</div>
+		</div>
+		<div class="goods_wrap">
+	<% for (var i = 0; i < result.length; i++) { %>
+			<div class="goods" id="all<%= i %>">
+				<div class="goods_1"><input data-num="<%= i %>" name="sp" type="checkbox"></div>
+				<div class="goods_2"><img src="/images/55cdaec5N4586252d.jpg"><span id="name<%= i %>"><%= result[i].name %></span></div>
+				<div class="goods_3" id= "no<%= i %>"> <%= result[i].price %></div>
+				<div class="goods_4"> 	
+						<a href="javascript:void(0)" class="jian">-</a>
+						<input id= "va<%= i %>" type="text" value="1">
+						<a href=" javas+cript:void(0)" class="plus">+</a> 
+				</div>
+				<div class="goods_5"> 24.10</div>
+				<div class="goods_6 remove" data-num="<%= i %>">删除</div>
+			</div>	
+	<% }; %>
+
+
+		</div>
+		<div class="jiesuan">
+			<div><input type="checkbox" name="all"><span >全选</span> </div>
+			
+			
+			<div>
+			<form method="post" >
+				<input class="all" type="hidden" name="allmon">
+				<button id="submit">去结算</button> 
+			</form>
+			</div>
+			<div> 总价:￥<b class='orange' id='all'>0.00</b></div>
+			<div> <p>已选择<b class='orange' id="add_num">0</b>件商品</p> </div>
+
+		</div>
+	</div>
+	<% }else{ %>
+	<div class="cart_none">
+			<img src="/images/12653651_163429595173_2.jpg">
+			<div>
+				<span>购物车空空的哦~，去看看心仪的商品吧~</span>
+				<p><a href="/">去购物>></a></p>
+			</div>	
+	</div>
+<% } %>
+	<div class="cart_none" style="display:none">
+			<img src="/images/12653651_163429595173_2.jpg">
+			<div>
+				<span>购物车空空的哦~，去看看心仪的商品吧~</span>
+				<p><a href="/">去购物>></a></p>
+			</div>	
+	</div>
+</div>
+<% include footer.ejs %>
+<script type="text/javascript">
+$(function(){
+	$('.cartContainer').show();
+	$('.remove').click(function(){
+			var num = $(this).attr('data-num');
+			var remove_name = $('#name'+num).html(); 
+			$('input[data-num='+num +']')[0].checked=false;
+			add_all();
+			//设置全选
+			var all_choose = $('#add_num').html()-1;
+			if (all_choose>=0 ) {
+				$('#add_num').html(all_choose)	
+			};
+			$('#all'+ num).remove();
+			$.post('remove_shop',{remove_name:remove_name},function(){
+				 location.reload()
+			})
+			if ($('.goods').length==0) {
+				$('.cart_none').show();
+				$('.cartContainer').hide();
+			};
+		})
+	function add_all(){
+		var price = 0;
+			 for (var i = 0; i < $('input[name=sp]:checked').length; i++) {
+			 	var num = $('input[name=sp]:checked').eq(i).attr('data-num');
+			 	 price +=parseFloat($('#no'+num).html())*parseFloat($('#va'+num).attr('value')) 
+			 };		 
+			$('#all').html(price.toFixed(2));
+			$('.all').attr('value',$('#all').html());
+	}
+
+	//post提交
+		$('#submit').click(function(){
+			var obj =[];var length = 0;
+			 for (var i = 0; i < $('input[name=sp]:checked').length; i++) {
+			 	var num = $('input[name=sp]:checked').eq(i).attr('data-num');
+			 	obj[i]={
+			 		'sp':$('#name'+num).html(),
+			 		'price':$('#no'+num).html(),
+			 		'num':$('#va'+num).attr('value')
+			 	}	 	
+		 	}	
+		 	length = $('#add_num').html();
+		 	var allmon = $('#all').html(); 	 	
+		 	if (($('.your_money').html()-allmon)>=0) {
+			 	$.post('submit',{obj:JSON.stringify(obj),lengtha:length,allmon:allmon});
+				//  for (var i = 0; i < $('input[name=sp]:checked').length; i++) {
+				// 	var num = $('input[name=sp]:checked').eq(i).attr('data-num');
+				// 	remove_name=$('#name'+num).html();
+				// 	$.post('remove_shop',{remove_name:remove_name});
+				// };	
+			 
+		 	}else{
+		 		alert('您的钱不够')
+		 	}
+		})
+	
+})
+	
+</script>
+<script type="text/javascript">
+$(function(){
+	var checked = false;
+	$('input[name=all]').click(function(){
+		checked = !checked;
+		if (checked) {
+			//选择商品数量
+		 	$('#add_num').html( $('input[name=sp]').length);
+			$('input[type=checkbox]').attr('checked',true);		
+		}else {
+			$('input[type=checkbox]').attr('checked',false);
+			//选择商品数量
+			$('#add_num').html(0);		
+		}
+		add_all();
+
+	});
+	$('input[name=sp]').click(function(){
+		
+		if ($('input[name=sp]').length==$('input[name=sp]:checked').length) {
+				$('input[name=all]').attr('checked',true);
+			}
+		if ($('input[name=sp]').length!==$('input[name=sp]:checked').length ) {
+			$('input[name=all]').attr('checked',false);
+		};
+		//选择商品数量
+		 $('#add_num').html( $('input[name=sp]:checked').length);
+		 add_all();
+		
+	})
+	
+	//点击增加
+	$('.plus').click(function(){
+		var num = parseInt($(this).prev('input').attr('value')) +1;
+		$(this).prev('input').attr('value',num);
+		 add_all();
+	})
+	$('.jian').click(function(){
+		if ($(this).next('input').attr('value')==1) {
+			$(this).next('input').attr('value',1)
+			 add_all();
+		}else{
+			var num = parseInt($(this).next('input').attr('value')) -1;
+			$(this).next('input').attr('value',num);
+			 add_all();
+		}	
+	})
+	//点击增加	
+	//结账start
+	function add_all(){
+		var price = 0;
+		 for (var i = 0; i < $('input[name=sp]:checked').length; i++) {
+		 	var num = $('input[name=sp]:checked').eq(i).attr('data-num');
+		 	 price +=parseFloat($('#no'+num).html())*parseFloat($('#va'+num).attr('value')) 			
+		 };	 
+		$('#all').html(price.toFixed(2));
+		$('.all').attr('value',$('#all').html());
+	}	
+	//结账end
+
+})
+
+	
+	
+</script>
