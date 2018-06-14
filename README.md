@@ -8,7 +8,7 @@ The source of Fancy shop
   I introduce it  in this blog： Please click on this link
   http://www.cnblogs.com/dh-dh/p/4998903.html
   
-##What are the features of fancy？
+## What are the features of fancy？
 
 * add to Shopping Cart
 * settle accounts
@@ -25,14 +25,14 @@ The source of Fancy shop
 * QQ:627648471
 * github :https://github.com/chenby
 
-##Donors Developer
+## Donors Developer
 Thank you very much
 
-##Thanks
+## Thanks
 *  https://github.com/chenby
 * http://www.cnblogs.com/dh-dh
 
-##About Author
+## About Author
 ```javascript
   var blogs = {
     Name  : "chenby",
